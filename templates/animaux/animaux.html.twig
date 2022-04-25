@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} PortFolio animaux - Photomaeght {% endblock %}
+
+{% block body %}
+    <main>
+        <div class="retour">
+            <a href="{{ path('app_accueil') }}"><p>Retour catégories portfolio</p></a>
+        </div>
+        <div class="galerie">
+        
+            {% for animaux  in photosAnimauxPortfolio %}
+                <div class="containerImg">
+                    <img src="/uploads/{{ animaux.photo}}" alt="photos_animaux" loading="lazy" >
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

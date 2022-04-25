@@ -1,0 +1,153 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Photomaeght - Capturer vos moments d'émotions{% endblock %}
+
+{% block body %}
+
+       <section class="carrousel">
+            <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for carrousel in photosCarrousel %}
+                            <div class="swiper-slide"> 
+                                <img src="/uploads/{{ carrousel.photo}}" alt="photos_carrousel">
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
+
+        <div class="textIntro">
+           <p><i class="fa-solid fa-quote-left"></i>De manière inconsciente, je croise, je guette un regard, une expression, des traits ou une nostalgie capable de résumer ou plus exactement de révéler une vie<i class="fa-solid fa-quote-right"></i></p>
+            <h3 class="signature">Steve McCurry</h3>
+        </div>
+    </section>
+
+    <section class="aPropos" id="bibliographie">
+        <div class="presentation">
+            <h1>À propos</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus quae sunt quos porro impedit. Natus dolorem atque at cum culpa impedit, dignissimos enim, reiciendis ipsum consequuntur nesciunt, asperiores eligendi! Corporis reprehenderit enim neque porro excepturi eos nobis. Est possimus voluptas architecto molestias eos iure animi consectetur quis numquam. Magni soluta expedita sit nostrum, enim unde rerum rem amet commodi totam! Ex dolores perferendis voluptatem inventore saepe possimus consequatur necessitatibus deleniti aspernatur .</p>
+            <div class="patricia"></div>
+        </div>
+        <div class="photo">
+            <img src="{{ asset('images/photographe.jpg')}}" alt="photographe">
+        </div>
+    </section>
+
+    <section class="portfolio" id="categoriePhotos">
+        {% for accueilMariage in photosAccueilMariage %}
+            <div class="categorie mariage"> <a href="{{ path('app_mariage')}}"> <img src="/uploads/{{ accueilMariage.photo}}" alt="Photo_mariage" loading="lazy"></a> </div>
+        {% endfor %}
+
+        {% for accueilFamille in photosAccueilFamille %}
+            <div class="categorie famille"> <a href="{{ path('app_famille')}}"> <img src="/uploads/{{ accueilFamille.photo}}" alt="photo_famille" loading="lazy" > </a>  </div>
+        {% endfor %}
+
+        {% for accueilEnfant in photosAccueilEnfant %}
+            <div class="categorie enfant"> <a href="{{ path('app_enfant')}}"> <img src="/uploads/{{ accueilEnfant.photo}}" alt="photo_enfant" loading="lazy"> </a>  </div>
+        {% endfor %}
+
+        {% for accueilEvenement in photosAccueilEvenement %}
+            <div class="categorie evenement"> <a href="{{ path('app_evenement')}}"> <img src="/uploads/{{ accueilEvenement.photo}}" alt="photo_evenement" loading="lazy" alt="photo_concert"> </a>  </div>
+        {% endfor %}
+
+        {% for accueilAnimaux in photosAccueilAnimaux %}
+            <div class="categorie animaux"> <a href="{{ path('app_animaux')}}"> <img src="/uploads/{{ accueilAnimaux.photo}}" alt="photo_Animal" loading="lazy"> </a> </div>
+        {% endfor %} 
+        
+    </section>
+
+    <div class="parallaxe"></div>
+
+    <section class="services" id="categorieServives">
+        <div class="identite cart aos-item"
+            data-aos="zoom-out-left"
+            data-aos-duration="1500">
+                <div class="servicePhoto">
+                    <a href="{{ path('app_services')}}#identiteService"> <img src="{{ asset('images/photoIdentite.jpg') }}" alt="photo_identité"> </a>
+                    <div>
+                        <p>Photos conformes pour vos documents officiels, nous sommes agrée "agence national des titres sécurisés"...</p>
+                    </div>
+                    <div class="btnServices">
+                        <a href="{{ path('app_services')}}#identiteService"><button>En savoir plus →</button>  </a>
+                    </div>
+                </div>
+        </div>
+        <div class="cadeau cart aos-item"
+            data-aos="zoom-out"
+            data-aos-duration="1500">
+                <div class="serviceCadeau">
+                    <a href="{{ path('app_services')}}#cadeauService"> <img src=" {{ asset('images/photoCadeau.jpg')}}" alt="photo_famille"> </a>
+                    <div>
+                        <p>Offrez un cadeau qui reste!!! Réaliser une photo c'est mettre son quotidien en pause...</p>
+                    </div>
+                    <div class="btnServices">
+                        <a href="{{ path('app_services')}}#cadeauService"><button>En savoir plus →</button>  </a>
+                    </div>
+                </div>
+        </div>
+        <div class="restauration cart aos-item"
+            data-aos="zoom-out-right"
+            data-aos-duration="1500">
+                <div class="serviceRenovation">
+                    <a href="{{ path('app_services')}}#restaurationPhoto"> <img src="{{ asset('images/photoAncienne.jpg')}}" alt="photo_ancienne"> </a>
+                    <div>
+                        <p>Restauration de photos anciennes, redonnez vie à vos souvenirs d'antan...</p>
+                    </div>
+                    <div class="btnServices">
+                        <a href="{{ path('app_services')}}#restaurationPhoto"><button>En savoir plus →</button>  </a>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    {# <section class="informations" id="categorieInformations">
+        <div class="horaires">
+            <h3>Horaires</h3>
+            <p >Je suis présente le LUNDI, MERCREDI et VENDREDI dans la matinée.</p>
+            <p class="textCouleur">(Sauf absence pour rendez-vous extérieur)</p>
+            <h3>Les autres jours</h3>
+            <p>Vous avez la possibilité de venir directement au studio, <br>si je suis là je vous accueillerez avec plaisir. <br>Cependant pour éviter tout desagréments il est conseillé de prendre rendez-vous</p>
+            <div class="rdv">
+                <i class="fa-solid fa-phone"></i>
+                {% for informations in information %}
+                    <span class="phone">{{ informations.telephone}}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </section> #}
+
+    <div id="carte"></div> 
+
+    {# <section class="contact" id="categorieContact">
+        <div class="infos">
+            {% for informations in information%}
+                <div class="place">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span class="place">{{ informations.adresse}}</span>
+                </div>
+                <div class="phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="phone">{{ informations.telephone}}</span>
+                </div>
+                <div class="email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="email">{{ informations.email}}</span>
+                </div>
+                <div class="facebook">
+                    <a href="{{ informations.lien}}"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="formulaire">
+            {% for message in app.flashes('messageEnvoye') %}
+                <div class="messageEnvoye">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <div class="form">
+                {{ form(form) }}
+            </div>
+        </div> 
+    </section>  #}
+
+
+{% endblock %}

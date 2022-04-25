@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} PortFolio mariage - Photomaeght {% endblock %}
+
+{% block body %}
+    <main>
+        <div class="retour">
+            <a href="{{ path('app_accueil') }}"><p>Retour catégories portfolio</p></a>
+        </div>
+        <div class="galerie">
+        
+            {% for mariage  in photosMariagePortfolio %}
+                <div class="containerImg">
+                    <img src="/uploads/{{ mariage.photo}}" alt="photos_mariage" loading="lazy" >
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photosmaeght - Capturer vos moments d'émotions</title>
+    <link rel="shortcut icon" href="images/iconNavigateur.jpg">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+</head>
+<body>
+    <header> 
+        <label>
+            <input type="checkbox">
+            <span class="menu"> <span class="hamburger"></span> </span>
+            <ul>
+                <li><a href=" {{ path('app_accueil') }}"><i class="fa-solid fa-house iconesMenus"></i>Accueil</a></li>
+                <li><a href="{{ path('app_accueil')}}#bibliographie"><i class="fa-solid fa-person iconesMenus"></i>À propos</a> </li>
+                <li><a href="{{ path('app_accueil')}}#categoriePhotos"><i class="fa-solid fa-camera-retro iconesMenus"></i>Portfolio</a> 
+                <li><a href="{{ path('app_accueil')}}#categorieServives"><i class="fa-solid fa-photo-film iconesMenus"></i>Services</a></li>
+                <li><a href="{{ path('app_accueil')}}#categorieContact"><i class="fa-solid fa-envelope iconesMenus"></i>Contact</a></li>
+                </li>
+            </ul>
+        </label>
+        <div class="navbar">
+            <div class="icones">
+                {# {% for informations in information %}
+                    <a href="{{ informations.lien}}"><i class="fa-brands fa-facebook-f"></i></a>
+                {% endfor %} #}
+                <a href="{{ path('app_accueil')}}#categorieContact"><i class="fa-solid fa-envelope-circle-check"></i></a>
+            </div>
+            <div class="imgIntro">
+                <img src="{{ asset('images/logoPhotomaeght.png')}}" alt="logo">
+            </div>
+            <div class="clique"> <p>Cliquez pour explorer </p></div>
+            
+        </div>
+        <div class="traitIntro"></div>
+    </header>
+
+    {% block body %} {% endblock %}
+
+ 
+    <div class="traitIntro"></div>
+
+    <footer>
+        <div class="containerFooter">
+            <p>©2022 Photomaeght</p>
+            <a href="#"><p>Conditions d'utilisations</p></a>
+            <a href="#"> <i class="fa-solid fa-house-lock"></i> </a>
+            <a href="https://www.facebook.com/commerce59470/"> <img src=" {{ asset('images/locauxMotiv.png')}}" alt="logo"> </a>
+        </div>
+    </footer>   
+    
+
+
+    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://kit.fontawesome.com/a84d56ab83.js" crossorigin="anonymous"></script>
+    <script src=" {{asset('js/app.js')}} "></script>
+</body>
+</html>

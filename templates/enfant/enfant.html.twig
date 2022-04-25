@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} PortFolio enfant - Photomaeght {% endblock %}
+
+{% block body %}
+    <main>
+        <div class="retour">
+            <a href="{{ path('app_accueil') }}"><p>Retour catégories portfolio</p></a>
+        </div>
+        <div class="galerie">
+        
+            {% for enfant  in photosEnfantPortfolio %}
+                <div class="containerImg">
+                    <img src="/uploads/{{ enfant.photo}}" alt="photos_enfant" loading="lazy" >
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
