@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Evenement;
+use App\Entity\Informations;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,9 +23,11 @@ class EvenementController extends AbstractController
     public function index(): Response
     {
         $evenementPortfolio = $this->entityManager->getRepository(Evenement::class)->findAll();
+        $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
         return $this->render('evenement/evenement.html.twig', [
             'photosEvenementportfolio' => $evenementPortfolio,
+            'informations' => $informations,
         ]);
     }
 }

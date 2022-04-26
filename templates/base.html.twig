@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photosmaeght - Capturer vos moments d'émotions</title>
+    <title>{% block title %} Photosmaeght - Capturer vos moments d'émotions {% endblock %}</title>
     <link rel="shortcut icon" href="images/iconNavigateur.jpg">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -27,9 +27,9 @@
         </label>
         <div class="navbar">
             <div class="icones">
-                {# {% for informations in information %}
-                    <a href="{{ informations.lien}}"><i class="fa-brands fa-facebook-f"></i></a>
-                {% endfor %} #}
+                {% for informations in informations %}
+                    <a href="{{ informations.facebook}}"><i class="fa-brands fa-facebook-f"></i></a>
+                {% endfor %}
                 <a href="{{ path('app_accueil')}}#categorieContact"><i class="fa-solid fa-envelope-circle-check"></i></a>
             </div>
             <div class="imgIntro">
@@ -50,7 +50,7 @@
         <div class="containerFooter">
             <p>©2022 Photomaeght</p>
             <a href="#"><p>Conditions d'utilisations</p></a>
-            <a href="#"> <i class="fa-solid fa-house-lock"></i> </a>
+            <a href="{{ path('app_login_admin') }}"> <i class="fa-solid fa-house-lock"></i> </a>
             <a href="https://www.facebook.com/commerce59470/"> <img src=" {{ asset('images/locauxMotiv.png')}}" alt="logo"> </a>
         </div>
     </footer>   

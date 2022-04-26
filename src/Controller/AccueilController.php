@@ -9,6 +9,7 @@ use App\Entity\AccueilFamille;
 use App\Entity\AccueilMariage;
 use App\Entity\Carrousel;
 use App\Entity\Contact;
+use App\Entity\Informations;
 use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -36,6 +37,7 @@ class AccueilController extends AbstractController
         $photosAccueilEvenement = $this->entityManager->getRepository(AccueilEvenement::class)->findByIsValid(1);
         $photosAccueilEnfant = $this->entityManager->getRepository(AccueilEnfant::class)->findByIsValid(1);
         $photosAccueilAnimaux = $this->entityManager->getRepository(AccueilAnimaux::class)->findByIsValid(1);
+        $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -75,6 +77,7 @@ class AccueilController extends AbstractController
             'photosAccueilEvenement' => $photosAccueilEvenement,
             'photosAccueilEnfant' => $photosAccueilEnfant,
             'photosAccueilAnimaux' => $photosAccueilAnimaux,
+            'informations' => $informations,
             'form' => $form->createView(),
         ]);
     }

@@ -108,9 +108,9 @@
             <p>Vous avez la possibilité de venir directement au studio, <br>si je suis là je vous accueillerez avec plaisir. <br>Cependant pour éviter tout desagréments il est conseillé de prendre rendez-vous</p>
             <div class="rdv">
                 <i class="fa-solid fa-phone"></i>
-                {# {% for informations in information %}
+                {% for informations in informations %}
                     <span class="phone">{{ informations.telephone}}</span>
-                {% endfor %} #}
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -119,23 +119,23 @@
 
     <section class="contact" id="categorieContact">
         <div class="infos">
-            {# {% for informations in information%} #}
+            {% for informations in informations %}
                 <div class="place">
                     <i class="fa-solid fa-location-dot"></i>
-                    {# <span class="place">{{ informations.adresse}}</span> #}
+                    <span class="place">{{ informations.adresse}}</span>
                 </div>
                 <div class="phone">
                     <i class="fa-solid fa-phone"></i>
-                    {# <span class="phone">{{ informations.telephone}}</span> #}
+                    <span class="phone">{{ informations.telephone}}</span>
                 </div>
                 <div class="email">
                     <i class="fa-solid fa-envelope"></i>
-                    {# <span class="email">{{ informations.email}}</span> #}
+                    <span class="email">{{ informations.email}}</span>
                 </div>
                 <div class="facebook">
-                    {# <a href="{{ informations.lien}}"><i class="fa-brands fa-facebook"></i></a> #}
+                    <a href="{{ informations.facebook}}"><i class="fa-brands fa-facebook"></i></a>
                 </div>
-            {# {% endfor %} #}
+            {% endfor %}
         </div>
         <div class="formulaire">
             {% for message in app.flashes('messageEnvoye') %}

@@ -5,13 +5,13 @@
 {% block body %}
     <main>
         <div class="retour">
-            <a href="{{ path('app_accueil') }}"><p>Retour catégories portfolio</p></a>
+            <a href="{{ path('app_accueil') }}#categoriePhotos"><p>Retour catégories portfolio</p></a>
         </div>
         <div class="galerie">
         
             {% for animaux  in photosAnimauxPortfolio %}
                 <div class="containerImg">
-                    <img src="/uploads/{{ animaux.photo}}" alt="photos_animaux" loading="lazy" >
+                    <img src="/uploads/{{ animaux.photo }}" alt="photos_animaux" loading="lazy" >
                 </div>
             {% endfor %}
         </div>

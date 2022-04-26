@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Mariage;
+use App\Entity\Informations;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,10 +22,12 @@ class MariageController extends AbstractController
     public function index(): Response
     {
         $mariagePortfolio = $this->entityManager->getRepository(Mariage::class)->findAll();
+        $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
         return $this->render('mariage/mariage.html.twig', [
 
             'photosMariagePortfolio' => $mariagePortfolio,
+            'informations' => $informations,
         ]);
     }
 }

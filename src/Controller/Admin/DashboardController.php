@@ -13,6 +13,7 @@ use App\Entity\Categorie;
 use App\Entity\Enfant;
 use App\Entity\Evenement;
 use App\Entity\Famille;
+use App\Entity\Informations;
 use App\Entity\Mariage;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -63,5 +64,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Portfolio famille', 'fas fa-users', Famille::class);
 
         yield MenuItem::section('services');
+
+        yield MenuItem::linkToCrud('Information', 'fas fa-info', Informations::class);
     }
 }
