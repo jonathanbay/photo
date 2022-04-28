@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter - Photomaeght</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+</head>
+
+<body>
+
+    {% block body %}
+    
+        <div class="formulaires">
+            <div class="formConnexion">
+                <form method="post">
+
+                    <h1>Administration</h1>
+
+                    {% if error %}
+                        <div class="messageEnvoye"> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="inputConnexion"  placeholder="Votre email">
+
+                    <input type="password" name="password" id="inputPassword" class="inputConnexion" autocomplete="current-password" required placeholder="Votre mot de passe">
+
+                    <input type="hidden" name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}"
+                    >
+                    <button class="btnConnexionAdmin" type="submit">
+                        Ouvrir une session
+                    </button>
+                </form>
+            </div>
+           
+            <div class="imgConnexion cart aos-item" data-aos="fade-left">
+                <div class="clipPath" ></div>
+            </div>
+            
+        </div>
+
+
+    {% endblock %}
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src=" {{asset('js/app.js')}} "></script>
+</body>
+</html>
+
