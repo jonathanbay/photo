@@ -57,7 +57,7 @@
 
     <div class="parallaxe"></div>
 
-    <section class="services" id="categorieServives">
+    {# <section class="services" id="categorieServives">
         <div class="identite cart aos-item"
             data-aos="zoom-out-left"
             data-aos-duration="1500">
@@ -97,7 +97,36 @@
                     </div>
                 </div>
         </div>
-    </section>
+    </section> #}
+
+    <section class="services">
+            <div class="conteneurServices">
+                <div class="cart aos-item"
+                    data-aos="zoom-out-right"
+                    data-aos-duration="1500">
+                    <img src= "{{ asset('images/icones/iconAnts.png') }}" alt="logo">
+                    <p>Photos conformes pour vos documents officiels, nous sommes agrée "agence national des titres sécurisés"...</p>
+                    <a class="btnServices" href="{{ path('app_services')}}">En savoir plus</a>
+                    
+                </div>
+                <div class="cart aos-item"
+                    data-aos="zoom-out"
+                    data-aos-duration="1500">
+                    <img src="{{ asset('images/icones/cadeau.png') }}" alt="cadeau">
+                    <p>Offrez un cadeau qui reste!!! Réaliser une photo c'est mettre son quotidien en pause...</p>
+                    <a class="btnServices" href="{{ path('app_services')}}">En savoir plus</a>
+                    
+                </div>
+                <div class="cart aos-item"
+                    data-aos="zoom-out-left"
+                    data-aos-duration="1500">
+                    <img src=" {{ asset('images/icones/anciennePhoto.png') }}" alt="photo">
+                    <p>Restauration de photos anciennes, redonnez vie à vos souvenirs d'antan...</p>
+                    <a class="btnServices" href="{{ path('app_services')}}">En savoir plus</a>
+                    
+                </div>
+            </div>
+        </section>
 
     <section class="informations" id="categorieInformations">
         <div class="horaires">

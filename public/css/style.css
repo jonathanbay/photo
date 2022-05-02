@@ -264,13 +264,14 @@ label i {
     display: grid;
     /* grid-template-columns: 450px 400px 450px 10px; */
     grid-template-columns: 1fr 450px 400px 450px 1fr;
-    grid-template-rows: 150px 150px 150px 150px 180px;
+    grid-template-rows: 100px 150px 150px 150px 150px 230px;
     grid-template-areas: 
-        "z b a c "
-        "z b a c "
-        "z e a c "
-        "z e a d "
-        "z e h d ";
+            "z b x x x"
+            "z b a c c"
+            "z b a c c"
+            "e e a c c"
+            "e e a d y"
+            "e e h d y";
 }
 
 .categorie:nth-child(1) {
@@ -307,7 +308,6 @@ label i {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* border: thick double rgba(245, 245, 245, 0.781); */
     border: thick double #87683A;
     border-width: 6px;
     
@@ -430,17 +430,17 @@ label i {
 }
 /* **************** parallaxe ************** */
 .parallaxe {
-    background: url(../images/parallaxe.jpg) no-repeat fixed 50% 60%;
-    /* background-image:  {{asset('images/parallaxe.jpg')}}; */
-    /* background-repeat: no-repeat;
+    /* background: url(../images/parallaxe.jpg) no-repeat fixed 50% 60%; */
+    background-image: url(../images/parallaxe.jpg);
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 50% 60%; */
+    background-position: 50% 60%; 
     background-size: cover; 
     height: 500px;
     width: 100%;
 }
 /* ********************service *************** */
-.services {
+/* .services {
     height: 650px;
     width: 100%;
     display: flex;
@@ -482,7 +482,70 @@ label i {
 .btnServices button:hover {
     background-color: #87683A;
     color: #000;
+} */
+
+
+.services {
+    height: 600px;
+    width: 100%;
+    background-image: url(../images/bgService.jpg) ;
+    background-size:cover; 
+    background-repeat:no-repeat;
+    background-position:center; 
+    margin: auto;
 }
+.conteneurServices {
+    /* height: 700px; */
+    padding-top: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+ }
+.cart {
+    height: 400px;     
+    width: 300px;  
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.603);
+    border-radius: 10px;
+    margin:10px;
+}
+.cart img {
+    height: 80px;
+    width: 80px;
+    margin: 10px auto 50px auto;
+    
+    
+}
+.cart p {
+    text-align: center;
+    margin:30px 20px 30px 20px;
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-weight: 600; */
+    font-size: 16px;
+}
+
+.btnServices {
+    border: 1px solid black;
+    width: 200px;
+    text-align: center;
+    padding: 10px 5px;
+    margin: 20px auto;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+.btnServices:hover {
+    background-color: #3b3b3b;
+    color: #f1f1f1;
+    border: none;
+    transition: 0.7s ease-in-out;
+} 
+
 
 /* ************** informations **************** */
 .informations {
@@ -694,6 +757,9 @@ label i {
     margin: 50px;
     line-height: 3rem;
 }
+.imgCadeau {
+    order: 1;
+}
 /* ********************* connexion espace administrateur ************* */
 
 .formulaires {
@@ -702,7 +768,9 @@ label i {
     align-items: center;
     /* flex-flow: row wrap; */
     height: 100vh;
-    background-color: #f1f1f1;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
 }
 .formConnexion {
     width: 50%;
@@ -738,7 +806,7 @@ label i {
     height: 100vh;
 }
 .clipPath {
-    background: url(../images/bgConnexionAdmin.jpg) no-repeat center/cover;
+    background: url(../images/imgConnexionAdmin.jpg) no-repeat center/cover;
     -webkit-clip-path: polygon(16% 0, 100% 0, 100% 100%, 0% 100%);
     clip-path: polygon(16% 0, 100% 0, 100% 100%, 0% 100%);
     width: 100%;
@@ -759,21 +827,18 @@ label i {
         transform: rotate(40deg);
     }
 }
-@media screen and (max-width: 1319px) {
-    .services {
-        height: 1270px;
-    }
-}
+
 @media screen and (max-width: 1300px) {
     .portfolio {
         height: auto;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0px 370px 250px 350px 500px;
+        grid-template-rows: 100px 400px 370px 100px 350px 600px;
         grid-template-areas: 
-            "paragraphe paragraphe "
             "a b"
-            "a d"
-            "e d"
+            "a b "
+            "a e"
+            "d e"
+            "d e"
             "c c";
     }
     .portfolio h3 {text-align: center;}
@@ -798,9 +863,11 @@ label i {
         transform: rotate(40deg);
     }
 }
-@media screen and (max-width: 879px) {
-    .services {height: 1910px}
+@media screen and (max-width: 959px) {
+    .services { height: 850px;}
+    .conteneurServices { padding-top: 0;}
 }
+
 
 @media screen and (max-width: 800px) {
     /* .icones a {display: none;} */
@@ -824,13 +891,30 @@ label i {
         width: 100%;
         margin: 20px 10px;
     }
+    .formulaires {
+        display: block;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        
+    }
+    .formConnexion {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    .imgConnexion {
+        visibility: hidden;
+    }
 }
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
     .categorie:nth-child(1) {line-height: 1.2em;}
     .portfolio {
         grid-template-rows: 0px 300px 250px 350px 500px;
     }
-}
+} */
 @media screen and (max-width: 691px) {
     .portfolio {
         display: flex;
@@ -844,8 +928,18 @@ label i {
         height: 100%;
         object-fit: cover;
     }
-    .mariage {background-color: beige;}
-    .services {height: 1950px;}
+    .categorie:nth-child(1), .categorie:nth-child(4) {
+        order: 1;
+        height: 550px;
+        width: 70%
+    }
+    .categorie:nth-child(2) {
+        order: 2;
+    }
+    .categorie:nth-child(3) {
+        order: 3;
+    }
+    .mariage, .evenement  {left: 45%; transform: translateX(-50%)}
     .swiper {width: 600px;}
     .swiper::before {width: 580; margin: auto;}
     .horaires {margin-bottom: 0;}
@@ -857,6 +951,11 @@ label i {
         bottom: 40px;
         left: 80px;
         transform: rotate(50deg);
+    }
+}
+@media screen and (max-width: 639px) {
+    .services {
+        height: 1270px;
     }
 }
 @media screen and (max-width: 577px) {

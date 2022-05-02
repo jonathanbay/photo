@@ -11,8 +11,10 @@
             </div>
         {% endif %} 
             <div>
-                <button type="button" class="btn btn-success mt-5"><a  href="{{ path('app_logout') }}"></a>Se deconnecter</button>
-                
+                <a href="{{ path('app_logout') }}"><button type="button" class="btn btn-success mt-5">Se deconnecter</button></a>
+            </div>
+            <div>
+                <a href="{{ path('app_accueil') }}" target="_blank"><button type="button" class="btn btn-success mt-2">Aller sur le site</button></a>
             </div>
     </div>
 {% endblock %}    
