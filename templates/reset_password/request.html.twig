@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Reinitialiser mot de passe{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+    
+</head>
+<body>
+    <div class="request">
+        <div class="formRequest">
+            {% block body %}
+                {% for flash_error in app.flashes('reset_password_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                {% endfor %}
+
+                <h1>Réinitialiser mon mot de passe</h1>
+
+                {{ form_start(requestForm) }}
+                    {{ form_row(requestForm.email) }}
+                    <div>
+                        <small> 
+                        <p>
+                            Veuillez inscrire votre email afin de recevoir l'email de réinitialisation de mot de passe.
+                        </p>
+                            
+                        </small>
+                    </div>
+
+                    <button class="btnMdp">Envoyer</button>
+                {{ form_end(requestForm) }}
+            {% endblock %}    
+        </div>
+    </div>
+</body>
+</html>
+
+
+

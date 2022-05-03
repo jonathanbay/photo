@@ -785,6 +785,13 @@ label i {
     font-family: 'Parisienne', cursive; 
     color: #87683A;
 }
+.formConnexion a {
+    font-family: 'Parisienne', cursive; 
+    color: #87683A;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 20px;
+} 
 .inputConnexion, .btnConnexionAdmin {
     border: 1px solid #87683A;
     outline: none;
@@ -812,6 +819,79 @@ label i {
     width: 100%;
     height: 100%;
 }
+/* ********************* page réinitialisation du mot de passe ************** */
+.request, .reset {
+    height: 100vh;
+    width: 100%;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+.formRequest, .formReset{
+    margin: 100px auto 0;
+    width: 50%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+}
+.formRequest h1, .formRequest small, .formReset {
+    font-family: 'Parisienne', cursive; 
+    color: #87683A;
+    text-align: center;
+}
+.formRequest small {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+
+}
+.inputMdp, .btnMdp {
+    border: 1px solid #87683A;
+    outline: none;
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+.btnMdpReset, .inputMdpReset {
+    border: 1px solid #87683A;
+    outline: none;
+    width: 60%;
+    position: relative;
+    padding: 15px 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+.btnMdp:hover {
+    background-color: #87683A;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+
+/* **************** page envoi mail **************** */
+.containerEmail {
+    width: 100%;
+    height: 100vh;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+.emailMdp {
+    margin: 100px auto 0;
+    width: 60%;
+    font-family: 'Parisienne', cursive; 
+    color: #87683A;
+    text-align: center;
+} 
 
 /* ********************** responsive page d'accueil *************** */
 
@@ -866,6 +946,7 @@ label i {
 @media screen and (max-width: 959px) {
     .services { height: 850px;}
     .conteneurServices { padding-top: 0;}
+    .formRequest { width: 80%}
 }
 
 
@@ -954,9 +1035,9 @@ label i {
     }
 }
 @media screen and (max-width: 639px) {
-    .services {
-        height: 1270px;
-    }
+    .services {height: 1270px;}
+    .formRequest { width: 95%;}
+    .inputMdp, .btnMdp { width: 90%;}
 }
 @media screen and (max-width: 577px) {
     .navbar {flex-direction: column;}

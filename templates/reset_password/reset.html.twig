@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinitialisez votre mot de passe</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+</head>
+<body>
+    <div class="reset">
+        <div class="formReset">
+        
+            {% block body %}
+                <h1>Reinitialisez votre mot de passe </h1>
+
+                {{ form_start(resetForm) }}
+                    {{ form_row(resetForm.plainPassword) }}
+                    <button class="btnMdpReset">Reinitialiser</button>
+                {{ form_end(resetForm) }}
+            {% endblock %}
+
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+
+

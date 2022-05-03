@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}E-mail de réinitialisation du mot de passe envoyé{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+</head>
+<body>
+    
+
+    {% block body %}
+    
+        <div class="containerEmail">
+            <div class="emailMdp">
+                <img src="{{ asset('images/soulignement.png')}}" alt="">
+                <h2>E-mail de réinitialisation du mot de passe envoyé</h2>
+                <p>
+                    Si un compte correspondant à votre e-mail existe, un e-mail vient d'être envoyé contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe. Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+                </p>
+                <p>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier spam ou <a href="{{ path('app_forgot_password_request') }}">réessayer.</a></p>
+            </div>
+        </div>
+    {% endblock %}
+
+</body>
+</html>
+
+

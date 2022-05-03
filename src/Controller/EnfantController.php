@@ -24,7 +24,7 @@ class EnfantController extends AbstractController
         $enfantPortfolio = $this->entityManager->getRepository(Enfant::class)->findAll();
         $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
-        return $this->render('enfant/enfant.html.twig', [
+        return $this->render('portfolio/enfant.html.twig', [
             'photosEnfantPortfolio' => $enfantPortfolio,
             'informations' => $informations,
         ]);

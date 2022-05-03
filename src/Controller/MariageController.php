@@ -24,7 +24,7 @@ class MariageController extends AbstractController
         $mariagePortfolio = $this->entityManager->getRepository(Mariage::class)->findAll();
         $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
-        return $this->render('mariage/mariage.html.twig', [
+        return $this->render('portfolio/mariage.html.twig', [
 
             'photosMariagePortfolio' => $mariagePortfolio,
             'informations' => $informations,

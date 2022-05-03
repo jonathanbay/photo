@@ -25,7 +25,7 @@ class EvenementController extends AbstractController
         $evenementPortfolio = $this->entityManager->getRepository(Evenement::class)->findAll();
         $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
-        return $this->render('evenement/evenement.html.twig', [
+        return $this->render('portfolio/evenement.html.twig', [
             'photosEvenementportfolio' => $evenementPortfolio,
             'informations' => $informations,
         ]);

@@ -24,7 +24,7 @@ class AnimauxController extends AbstractController
         $animauxPortfolio = $this->entityManager->getRepository(Animaux::class)->findAll();
         $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
-        return $this->render('animaux/animaux.html.twig', [
+        return $this->render('portfolio/animaux.html.twig', [
             'photosAnimauxPortfolio' => $animauxPortfolio,
             'informations' => $informations,
         ]);
