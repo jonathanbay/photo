@@ -677,7 +677,7 @@ label i {
     }
     .containerFooter p {
         margin: auto 20px;
-        font-size: 20px;
+        font-size: 18px;
         /* color: rgba(0, 0, 0, 0.603);  */
         color: var(--text-color);
     }
@@ -892,7 +892,20 @@ label i {
     color: #87683A;
     text-align: center;
 } 
-
+/* **************** conditions d'utilisations ************** */
+.condition {
+    margin: 5px 50px;
+}
+.condition p {
+color: #f1f1f1;
+font-size: 14px;
+margin: 5px 20px;
+}
+.condition h3 {
+    color: #87683A;
+    font-family: 'Parisienne', cursive;
+    margin: 0;
+    }
 /* ********************** responsive page d'accueil *************** */
 
 @media screen and (max-width: 1335px) {
