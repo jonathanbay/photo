@@ -517,14 +517,10 @@ label i {
     height: 80px;
     width: 80px;
     margin: 10px auto 50px auto;
-    
-    
 }
 .cart p {
     text-align: center;
     margin:30px 20px 30px 20px;
-    /* font-family: 'Montserrat', sans-serif; */
-    /* font-weight: 600; */
     font-size: 16px;
 }
 
@@ -550,35 +546,65 @@ label i {
 /* ************** informations **************** */
 .informations {
     height: auto;
+    margin-bottom: 50px;
 }
     .horaires {
         margin: 80px auto;
-        width: 700px;
-        height: 600px;
-        /* background: rgba(0, 0, 0, 0.459); */
+        width: 600px;
+        height: 500px;
         box-shadow: -10px 15px 25px 0 rgba(0, 0, 0, 0.637);
         border-radius: 5px;
+        background-color: #f1f1f1;
         position: relative;
-        border-top: 30px solid #CEBBA2 ;
-        border-right: 30px solid #CEBBA2 ;
-        border-bottom: 130px solid #CEBBA2;
-        border-left: 30px solid #CEBBA2;
     }
+    .horaires::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+        background-image: url(../images/punaise.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 2; 
+    } 
+    .horaires::after {
+        content: "Contactez moi !!!";
+        position: absolute;
+        font-family: 'Parisienne', cursive; 
+        color: #87683A;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        z-index: 2; 
+    } 
+    .polaroid {
+        background-color: #000;
+        margin: 19px;
+        transform: translateY(19px);
+        background: #434B4D;
+        background: radial-gradient(circle farthest-corner at center center, #434B4D 0%, #000000 66%);
+    }
+    
     .horaires h3, .horaires p {
         font-size: 18px;
-        /* margin: 15px 20px; */
         text-align: center;
-        /* color: rgba(244, 232, 212, 1); */
         color: var(--text-color);
     }
     .horaires h3 {
-        margin-top: 10px;
+        margin-top: 0;
         text-decoration: underline;
         padding-top: 20px;
     }
     .horaires .textCouleur {
         color: rgb(185, 52, 52);
-
         margin: 0 auto;
     }
     .rdv {
@@ -591,7 +617,8 @@ label i {
         width: 75%;
         height: 350px;
         margin: 5px auto;
-        box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.637);
+        /* box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.637); */
+        box-shadow: -10px 15px 25px 0 rgba(0, 0, 0, 0.637);
         border-radius: 5px;
     }
     /* ***************** formulaire de contact *********** */
@@ -710,7 +737,7 @@ label i {
         text-decoration: none;
     }
     .galerie {
-        width: 80%;
+        width: 100%;
         max-width: 1300px;
         margin: 20px auto;
         display: flex;
@@ -876,8 +903,6 @@ label i {
     cursor: pointer;
     transition: 0.5s ease-in-out;
 }
-
-
 /* **************** page envoi mail **************** */
 .containerEmail {
     width: 100%;
@@ -892,6 +917,11 @@ label i {
     color: #87683A;
     text-align: center;
 } 
+.iconeSvg {
+    stroke-dasharray: 50px;
+    stroke-dashoffset: 50px;
+}
+
 /* **************** conditions d'utilisations ************** */
 .condition {
     margin: 5px 50px;
@@ -909,18 +939,12 @@ margin: 5px 20px;
 /* ********************** responsive page d'accueil *************** */
 
 @media screen and (max-width: 1335px) {
-    .horaires::after {
-        top: -100px;
-        transform: rotate(10deg);
-        right: -80px;
-    }
     .clique::after {
         bottom: 35px;
         left: 160px;
         transform: rotate(40deg);
     }
 }
-
 @media screen and (max-width: 1300px) {
     .portfolio {
         height: auto;
@@ -961,8 +985,6 @@ margin: 5px 20px;
     .conteneurServices { padding-top: 0;}
     .formRequest { width: 80%}
 }
-
-
 @media screen and (max-width: 800px) {
     /* .icones a {display: none;} */
     .imgIntro, .clique {margin-right: 150px;}
@@ -982,8 +1004,8 @@ margin: 5px 20px;
     .patricia::before{left: 50%; transform: translateX(-50%);}
     .patricia::after{left: 50%; transform: translateX(-50%); text-align: center;}
     .horaires {
-        width: 100%;
-        margin: 20px 10px;
+        width: 80%;
+        margin: 20px auto;
     }
     .formulaires {
         display: block;
@@ -1003,12 +1025,10 @@ margin: 5px 20px;
         visibility: hidden;
     }
 }
-/* @media screen and (max-width: 700px) {
-    .categorie:nth-child(1) {line-height: 1.2em;}
-    .portfolio {
-        grid-template-rows: 0px 300px 250px 350px 500px;
-    }
-} */
+@media screen and (max-width: 727px) {
+    .horaires { height: 550px;}
+}
+
 @media screen and (max-width: 691px) {
     .portfolio {
         display: flex;
@@ -1052,35 +1072,21 @@ margin: 5px 20px;
     .formRequest { width: 95%;}
     .inputMdp, .btnMdp { width: 90%;}
 }
+
 @media screen and (max-width: 577px) {
     .navbar {flex-direction: column;}
     .imgIntro {margin: auto;order: 2;}
     .clique {display: none;}
     .swiper {max-width: 500px;}
     .swiper::before {max-width: 480px;}
-    .horaires {width: 95%;height: auto; margin: 20px 10px;}
-    .horaires::after {
-        top: -140px;
-        transform: rotate(0deg);
-        left: 50%;
-        transform: translate(-50%);
-        width: 200px;
-        height: 150px;
-   }
+    .horaires {width: 95%;margin: 20px auto;}
    .infos {font-size: 18px;}
 }
 @media screen and (max-width: 505px) {
     .portfolio h3 {margin: 0;}
     .categorie:nth-child(1) {line-height: 1em; height:400px}
-    .horaires{
-        border-top: 15px solid #CEBBA2;
-        border-right: 15px solid #CEBBA2;
-        border-bottom: 80px solid #CEBBA2;
-        border-left: 15px solid #CEBBA2;
-    }
-    .horaires p {
-        margin: auto 10px;
-    }
+    .categorie:nth-child(4) {line-height: 1em; height:460px}
+    .horaires p {margin: auto 10px;}
     #carte {
         width: 90%;
     }
@@ -1088,6 +1094,15 @@ margin: 5px 20px;
 @media screen and (max-width: 467px) {
     label .iconesMenus {display: none;}
 }
+@media screen and (max-width: 409px) {
+    .horaires {height: 600px; }
+    }
+    @media screen and (max-width: 375px) {
+        .horaires {height: 650px; }
+        .horaires::after {
+            bottom: 10px;
+        } 
+    }
 /* *************************responsive portfolio ************************ */ 
 
 @media screen and (max-width: 550px) {
