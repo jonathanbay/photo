@@ -3,11 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Carrousel;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class CarrouselCrudController extends AbstractCrudController
 {
@@ -23,11 +24,9 @@ class CarrouselCrudController extends AbstractCrudController
             TextField::new('nom'),
             TextareaField::new('description'),
             DateTimeField::new('createdAt', 'crée le'),
-            ImageField::new('photo')
-            ->setBasePath('uploads')
-            ->setUploadDir('public/uploads')
-            ->setUploadedFileNamePattern('[randomhash].[extension]')
-            ->setRequired(false),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            ImageField::new('photo')->setBasePath('/uploads/photos')->onlyOnIndex(),
+            TextField::new('file'),
         ];
     }
     

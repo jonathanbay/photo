@@ -1,136 +1,157 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 
 :root {
     --bg-color: #3b3b3b;
     --text-color: #f1f1f1;
-    --trait: #87683A;
-    }
+    --trait: #87683a;
+}
 
 /* *************** hamburger menus ************ */
-*, *:before, *:after 
-{ box-sizing: border-box; }
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
 
-html { font-size: 18px; scroll-behavior: smooth; width:100%;}
-
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+    width: 100%;
+}
 
 body {
-  color: #000;
-  font-size: 1.2em;
-  line-height: 1.6;
-  /* background-color: var(--text-color); */
-  background-color: var(--bg-color);
-  overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  cursor: url(images/logo.png), auto;
+    color: #000;
+    font-size: 1.2em;
+    line-height: 1.6;
+    /* background-color: var(--text-color); */
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
 label {
     height: 500px;
 }
+
 label .menu {
-  position: absolute;
-  /* right: -100px;
+    position: absolute;
+    /* right: -100px;
   top: -100px; */
-  right: 0px;
-  top: 0px;
-  z-index: 100;
-  /* width: 200px;
+    right: 0px;
+    top: 0px;
+    z-index: 100;
+    /* width: 200px;
   height: 200px; */
-  width: 90px;
-  height: 90px;
-  background: #FFF;
-  /* border-radius: 50% 50% 50% 50%; */
-  border-radius:50% 0 50% 50%;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
-  cursor: pointer;
-  
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    /* border-radius: 50% 50% 50% 50%; */
+    border-radius: 50% 0 50% 50%;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
+    cursor: pointer;
 }
+
 label .hamburger {
-  position: absolute;
-  /* top: 135px;
+    position: absolute;
+    /* top: 135px;
   left: 50px; */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 2px;
-  background: rgb(48, 47, 47);
-  display: block;
-  -webkit-transform-origin: center;
-  transform-origin: center;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-}
-label .hamburger:after, label .hamburger:before {
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: rgb(48, 47, 47);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 2px;
+    background: rgb(48, 47, 47);
+    display: block;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
-label .hamburger:before { top: -10px; }
+label .hamburger:after,
+label .hamburger:before {
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgb(48, 47, 47);
+}
 
-label .hamburger:after { bottom: -10px; }
+label .hamburger:before {
+    top: -10px;
+}
 
-label input { display: none; }
+label .hamburger:after {
+    bottom: -10px;
+}
 
-label input:checked + .menu {
-  box-shadow: 0 0 0 100vw #FFF, 0 0 0 100vh #FFF;
-  border-radius: 0;
-  
+label input {
+    display: none;
 }
-label input:checked + .menu .hamburger {
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  
+
+label input:checked+.menu {
+    box-shadow: 0 0 0 100vw #fff, 0 0 0 100vh #fff;
+    border-radius: 0;
 }
-label input:checked + .menu .hamburger:after {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  bottom: 0;
-  
+
+label input:checked+.menu .hamburger {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
-label input:checked + .menu .hamburger:before {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  top: 0;
-  
+
+label input:checked+.menu .hamburger:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    bottom: 0;
 }
-label input:checked + .menu + ul { opacity: 1; }
+
+label input:checked+.menu .hamburger:before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+}
+
+label input:checked+.menu+ul {
+    opacity: 1;
+}
 
 label ul {
-  z-index: 200;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  -webkit-transition: .25s 0s ease-in-out;
-  transition: .25s 0s ease-in-out;
+    z-index: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: 0.25s 0s ease-in-out;
+    transition: 0.25s 0s ease-in-out;
 }
+
 label a {
-  margin-bottom: 1em;
-  display: block;
-  color: #000;
-  text-decoration: none;
+    margin-bottom: 1em;
+    display: block;
+    color: #000;
+    text-decoration: none;
 }
+
 label li {
     list-style-type: none;
 }
+
 label i {
     color: rgb(48, 47, 47);
     font-size: 25px;
     margin: 0 20px;
 }
+
 /* ************** navbar ************** */
 .navbar {
     display: flex;
@@ -138,22 +159,27 @@ label i {
     justify-content: space-around;
     background-color: var(--bg-color);
 }
-.navbar i, .facebook i{
+
+.navbar i,
+.facebook i {
     font-size: 25px;
     margin: 0 20px;
     color: var(--text-color);
 }
+
 .imgIntro img {
     height: 150px;
 }
-.clique{
+
+.clique {
     width: 200px;
     margin: 100px 60px 0 0;
-    font-family: 'Parisienne', cursive;
+    font-family: "Parisienne", cursive;
     /* color: rgb(187, 13, 13); */
     color: var(--text-color);
     position: relative;
 }
+
 .clique::after {
     content: "";
     position: absolute;
@@ -173,6 +199,7 @@ label i {
     background-color: var(--trait);
     margin: 20px auto;
 }
+
 /* ***********animation carrousel ****************** */
 .swiper {
     width: 450px;
@@ -205,8 +232,9 @@ label i {
     height: 100%;
     object-fit: cover;
     /* border: thick double #87683A */
-    border: 4px solid #87683A;
+    border: 4px solid #87683a;
 }
+
 /* **************** style intro ************** */
 .carrousel {
     display: flex;
@@ -214,10 +242,13 @@ label i {
     align-items: center;
     flex-flow: row wrap;
 }
-.fa-quote-left, .fa-quote-right {
+
+.fa-quote-left,
+.fa-quote-right {
     margin: auto 20px;
     font-size: 30px;
 }
+
 .textIntro {
     width: 400px;
     margin: 0 15px;
@@ -226,14 +257,17 @@ label i {
     color: var(--text-color);
     border-right: 3px solid var(--trait);
 }
+
 .textIntro i {
     color: var(--trait);
     font-size: 30px;
 }
+
 .signature {
     font-style: italic;
     position: relative;
 }
+
 .signature::before {
     content: "";
     position: absolute;
@@ -242,10 +276,40 @@ label i {
     right: 280px;
     border-bottom: 3px solid var(--trait);
 }
+
 .textIntro p {
     margin-right: 30px;
 }
+
 /* ******************* portfoilo *************** */
+.portfolio {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 450px 400px 450px 1fr ;
+    grid-template-rows:  150px 150px 150px 150px 150px 230px;
+    grid-template-areas:
+        " z b x c v "
+        " z b a c v "
+        " z b a c v "
+        " y e a d v "
+        " y e a d v "
+        " y e w d v ";
+
+    /* grid-template-columns: 1fr repeat(6, 200px) 1fr ;
+    grid-template-rows:  repeat(6, 150px);
+    grid-template-areas:
+        
+        "v a a z d d t u"
+        "v a a z d d t u"
+        "v a a c c y y u"
+        "v x x c c e e u"
+        "v b b b w e e u"
+        "v b b b w e e u";  */
+
+}
 .portfolio::after {
     content: "portfolio";
     position: absolute;
@@ -253,53 +317,36 @@ label i {
     transform: translateX(-50%);
     top: -100px;
     font-size: 80px;
-    color: #87683A;
-    font-family: 'Parisienne', cursive;
-}
-.portfolio {
-    position: relative;
-    margin-top: 50px;
-    width: 100%;
-    margin: auto;
-    display: grid;
-    /* grid-template-columns: 450px 400px 450px 10px; */
-    grid-template-columns: 1fr 450px 400px 450px 1fr;
-    grid-template-rows: 100px 150px 150px 150px 150px 230px;
-    grid-template-areas: 
-            "z b x x x"
-            "z b a c c"
-            "z b a c c"
-            "e e a c c"
-            "e e a d y"
-            "e e h d y";
+    color: #87683a;
+    font-family: "Parisienne", cursive;
 }
 
-.categorie:nth-child(1) {
+.mariage {
     margin: 100px 25px 25px 25px;
     grid-area: a;
     position: relative;
 }
-.categorie:nth-child(2) {
-    /* margin: 40px 25px 25px 50px; */
+
+.famille {
     margin: 25px;
     grid-area: c;
     position: relative;
 }
-.categorie:nth-child(3) {
-    /* margin: 0px 25px 25px 25px; */
+
+.enfant{
     margin: 25px;
-    grid-area: d;
+    grid-area: b;
     position: relative;
 }
-.categorie:nth-child(4) {
-    /* margin: 50px 25px 35px 50px; */
+
+.evenement {
     margin: 25px;
     grid-area: e;
     position: relative;
 }
-.categorie:nth-child(5) {
-    grid-area: b;
-    /* margin: 0px 25px 0px 25px; */
+
+.animaux {
+    grid-area: d;
     margin: 25px;
     position: relative;
 }
@@ -308,14 +355,19 @@ label i {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: thick double #87683A;
+    border: thick double #87683a;
     border-width: 6px;
-    
 }
-.textePortfolio p{
+
+.textePortfolio p {
     padding-bottom: 30px;
 }
-.mariage::before, .famille::before, .enfant::before, .evenement::before, .animaux::before {
+
+.mariage::before,
+.famille::before,
+.enfant::before,
+.evenement::before,
+.animaux::before {
     position: absolute;
     width: 30px;
     height: 35px;
@@ -330,43 +382,64 @@ label i {
     z-index: 3;
 }
 
-.mariage::after, .famille::after, .enfant::after, .evenement::after, .animaux::after {
+.mariage::after,
+.famille::after,
+.enfant::after,
+.evenement::after,
+.animaux::after {
     content: "Consulter les photos";
     position: absolute;
     top: 80px;
     left: 30px;
     display: none;
     color: var(--text-color);
-    font-family: 'Parisienne', cursive;
+    font-family: "Parisienne", cursive;
     margin: auto;
     z-index: 3;
- }
+}
+
 .mariage::before {
     content: "Mariages";
 }
+
 .famille::before {
     content: "Familles";
 }
+
 .enfant::before {
-    content:"Enfants";
+    content: "Enfants";
 }
+
 .evenement::before {
-    content:"Evenements";
+    content: "Evenements";
 }
+
 .animaux::before {
-    content:"Animaux";
+    content: "Animaux";
 }
-.mariage:hover, .famille:hover, .enfant:hover, .evenement:hover, .animaux:hover  {  
+
+.mariage:hover,
+.famille:hover,
+.enfant:hover,
+.evenement:hover,
+.animaux:hover {
     opacity: 0.9;
 }
-.mariage:hover::after, .famille:hover::after, .enfant:hover::after, .evenement:hover::after, .animaux:hover::after {  
+
+.mariage:hover::after,
+.famille:hover::after,
+.enfant:hover::after,
+.evenement:hover::after,
+.animaux:hover::after {
     display: block;
     opacity: 1;
 }
+
 .categorie img:hover {
     transform: scale(1.01);
     filter: brightness(1.1);
 }
+
 /* ******************* A propos *************** */
 .aPropos {
     display: flex;
@@ -375,12 +448,14 @@ label i {
     flex-flow: row wrap;
     margin-top: 50px;
     margin-bottom: 100px;
-    background-color: #CEBBA2;
+    background-color: #cebba2;
 }
+
 .presentation {
     height: auto;
     width: 50%;
 }
+
 .presentation p {
     text-align: left;
     font-size: 18px;
@@ -388,18 +463,22 @@ label i {
     /* color: var(--text-color); */
     color: #000;
 }
+
 .patricia {
     position: relative;
 }
+
 .presentation h1 {
     text-align: center;
     color: #000;
 }
+
 .photo {
     margin: 50px auto;
     width: 400px;
     height: 500px;
 }
+
 .patricia::before {
     content: "";
     position: absolute;
@@ -407,9 +486,10 @@ label i {
     height: 60px;
     top: -40px;
     right: -130px;
-    background-color: #87683A;
+    background-color: #87683a;
     z-index: 2;
 }
+
 .patricia::after {
     content: "Patricia Maeght";
     position: absolute;
@@ -423,22 +503,25 @@ label i {
     font-size: 25px;
     z-index: 2;
 }
+
 .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 /* **************** parallaxe ************** */
 .parallaxe {
     /* background: url(../images/parallaxe.jpg) no-repeat fixed 50% 60%; */
     background-image: url(../images/parallaxe.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 50% 60%; 
-    background-size: cover; 
+    background-position: 50% 60%;
+    background-size: cover;
     height: 500px;
     width: 100%;
 }
+
 /* ********************service *************** */
 /* .services {
     height: 650px;
@@ -484,16 +567,16 @@ label i {
     color: #000;
 } */
 
-
 .services {
     height: 600px;
     width: 100%;
-    background-image: url(../images/bgService.jpg) ;
-    background-size:cover; 
-    background-repeat:no-repeat;
-    background-position:center; 
+    background-image: url(../images/bgService.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: auto;
 }
+
 .conteneurServices {
     /* height: 700px; */
     padding-top: 100px;
@@ -502,25 +585,28 @@ label i {
     justify-content: space-evenly;
     align-items: center;
     flex-flow: row wrap;
- }
+}
+
 .cart {
-    height: 400px;     
-    width: 300px;  
+    height: 400px;
+    width: 300px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.603);
     border-radius: 10px;
-    margin:10px;
+    margin: 10px;
 }
+
 .cart img {
     height: 80px;
     width: 80px;
     margin: 10px auto 50px auto;
 }
+
 .cart p {
     text-align: center;
-    margin:30px 20px 30px 20px;
+    margin: 30px 20px 30px 20px;
     font-size: 16px;
 }
 
@@ -535,235 +621,284 @@ label i {
     color: #000;
     font-size: 18px;
 }
+
 .btnServices:hover {
     background-color: #3b3b3b;
     color: #f1f1f1;
     border: none;
     transition: 0.7s ease-in-out;
-} 
-
+}
 
 /* ************** informations **************** */
 .informations {
     height: auto;
     margin-bottom: 50px;
 }
-    .horaires {
-        margin: 80px auto;
-        width: 600px;
-        height: 500px;
-        box-shadow: -10px 15px 25px 0 rgba(0, 0, 0, 0.637);
-        border-radius: 5px;
-        background-color: #f1f1f1;
-        position: relative;
-    }
-    .horaires::before {
-        content: "";
-        position: absolute;
-        top: -60px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 100px;
-        font-size: 20px;
-        background-image: url(../images/punaise.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 2; 
-    } 
-    .horaires::after {
-        content: "Contactez moi !!!";
-        position: absolute;
-        font-family: 'Parisienne', cursive; 
-        color: #87683A;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 300px;
-        font-size: 30px;
-        font-weight: bold;
-        text-align: center;
-        z-index: 2; 
-    } 
-    .polaroid {
-        background-color: #000;
-        margin: 19px;
-        transform: translateY(19px);
-        background: #434B4D;
-        background: radial-gradient(circle farthest-corner at center center, #434B4D 0%, #000000 66%);
-    }
-    
-    .horaires h3, .horaires p {
-        font-size: 18px;
-        text-align: center;
-        color: var(--text-color);
-    }
-    .horaires h3 {
-        margin-top: 0;
-        text-decoration: underline;
-        padding-top: 20px;
-    }
-    .horaires .textCouleur {
-        color: rgb(185, 52, 52);
-        margin: 0 auto;
-    }
-    .rdv {
-        color: #f1f1f1;
-        width: 211px;
-        margin: 10px auto;
-    }
-    /* **************** carte leaflet ************** */
-    #carte {
-        width: 75%;
-        height: 350px;
-        margin: 5px auto;
-        /* box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.637); */
-        box-shadow: -10px 15px 25px 0 rgba(0, 0, 0, 0.637);
-        border-radius: 5px;
-    }
-    /* ***************** formulaire de contact *********** */
 
-    .contact {
-        margin-top: 100px; 
-        height: auto;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-flow: row wrap;
-    }
-    .infos {
-        color: var(--text-color);
-    }
-    .infos i{
-        margin: 0;
-    }
-    .facebook {
-        margin: 0 0 30px 20px;
-    }
-    .formulaire {
-        width: 600px;
-    } 
-    .form {
-        width: 100%;
-    }
-    
-    .place, .phone, .email {
-        margin: 20px 20px;
-    }
-    .inputContact, textarea, .btnForm {
+.horaires {
+    margin: 80px auto;
+    width: 600px;
+    height: 500px;
+    box-shadow: -10px 15px 25px 0 rgba(0, 0, 0, 0.637);
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    position: relative;
+}
 
-        border: none;
-        width: 100%;
-        padding: 15px 10px;
-        margin: 3px 10px;
-        font-size: 18px;
-        font-family: 'Roboto', sans-serif;
-        border-radius: 8px;
-    }
-    textarea{
-        height:120px;
-        resize : none;
-    }
-    .btnForm{
-        font-size: 18px;
-        background-color:#ffffe9;
-        margin-bottom: 10px;
-        
-    }
-    .btnForm:hover{
-        background-color: #87683A;
-        color: var(--text-color);
-        cursor: pointer;
-        transition: 0.5s ease-in-out;
-    }   
-    /* ****************personnalisation message envoie réussi ************** */
-    .messageEnvoye {
-        background-color: #87683A;
-        color: #f1f1f1;
-        text-align: center;
-        font-size: 14px;
-        border-radius: 8px;
-        margin: 10px;
-        padding: 5px;
-        /* width: 100%; */
+.horaires::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    background-image: url(../images/punaise.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
 
-    }
-    /* *********************** footer *************** */
-    .containerFooter {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-flow: row wrap;
-        /* height: 150px; */
-        /* background-color: rgba(244, 232, 212, 1); */
-        background-color: var(--bg-color);
-    }
-    .containerFooter a {
-        text-decoration: none;
-    }
-    .containerFooter p {
-        margin: auto 20px;
-        font-size: 18px;
-        /* color: rgba(0, 0, 0, 0.603);  */
-        color: var(--text-color);
-    }
-    .containerFooter img {
-        height: 100px;
-        margin: auto 20px;
-    }
-    .containerFooter i {
-        color: #f1f1f1;
-        margin: auto 30px;
-    }
-    /* *******************page portfolio de toutes les categories ****************** */
-    .retour {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 40px;
-        width: 300px;
-        margin: 40px auto;
-        background-color: #87683A;
-        -webkit-clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 25% 100%, 14% 49%, 25% 0%);
-        clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 25% 100%, 14% 49%, 25% 0%);
-    }
-    .retour p {
-        margin-left: 35px;
-        font-size: 16px;
-        color: #000;
-    }
-    .retour a {
-        text-decoration: none;
-    }
-    .galerie {
-        width: 100%;
-        max-width: 1300px;
-        margin: 20px auto;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        flex-flow: row wrap;
-    }
-    .galerie img {
-        /* width: 100%; */
-        /* height: 100%; */
-        object-fit: contain;
-        margin: 10px;
-        width: 500px;
-        height: auto;
-    }
+.horaires::after {
+    content: "Contactez moi !!!";
+    position: absolute;
+    font-family: "Parisienne", cursive;
+    color: #87683a;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+.polaroid {
+    background-color: #000;
+    margin: 19px;
+    transform: translateY(19px);
+    background: #434b4d;
+    background: radial-gradient(circle farthest-corner at center center,
+            #434b4d 0%,
+            #000000 66%);
+}
+
+.horaires h3,
+.horaires p {
+    font-size: 18px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.horaires h3 {
+    margin-top: 0;
+    text-decoration: underline;
+    padding-top: 20px;
+}
+
+.horaires .textCouleur {
+    color: rgb(185, 52, 52);
+    margin: 0 auto;
+}
+
+.rdv {
+    color: #f1f1f1;
+    width: 211px;
+    margin: 10px auto;
+}
+
+/* **************** carte leaflet ************** */
+#carte {
+    width: 75%;
+    height: 350px;
+    margin: 5px auto;
+    /* box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.637); */
+    box-shadow: -10px 15px 25px 0 rgba(0, 0, 0, 0.637);
+    border-radius: 5px;
+}
+
+/* ***************** formulaire de contact *********** */
+
+.contact {
+    margin-top: 100px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.infos {
+    color: var(--text-color);
+}
+
+.infos i {
+    margin: 0;
+}
+
+.facebook {
+    margin: 0 0 30px 20px;
+}
+
+.formulaire {
+    width: 600px;
+}
+
+.form {
+    width: 100%;
+}
+
+.place,
+.phone,
+.email {
+    margin: 20px 20px;
+}
+
+.inputContact,
+textarea,
+.btnForm {
+    border: none;
+    width: 90%;
+    padding: 15px 10px;
+    margin: 3px 10px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    border-radius: 8px;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+.btnForm {
+    font-size: 18px;
+    background-color: #ffffe9;
+    margin-bottom: 10px;
+}
+
+.btnForm:hover {
+    background-color: #87683a;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+/* ****************personnalisation message envoie réussi ************** */
+/* .messageEnvoye {
+    background-color: #87683a;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 5px; */
+    /* width: 100%; */
+/* } */
+
+/* *********************** footer *************** */
+.containerFooter {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    /* height: 150px; */
+    /* background-color: rgba(244, 232, 212, 1); */
+    background-color: var(--bg-color);
+}
+
+.containerFooter a {
+    text-decoration: none;
+}
+
+.containerFooter p {
+    margin: auto 20px;
+    font-size: 18px;
+    /* color: rgba(0, 0, 0, 0.603);  */
+    color: var(--text-color);
+}
+
+.containerFooter img {
+    height: 100px;
+    margin: auto 20px;
+}
+
+.containerFooter i {
+    color: #f1f1f1;
+    margin: auto 30px;
+}
+
+/* *******************page portfolio de toutes les categories ****************** */
+.retour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 300px;
+    margin: 40px auto;
+    background-color: #87683a;
+    -webkit-clip-path: polygon(100% 0%,
+            100% 51%,
+            100% 100%,
+            25% 100%,
+            14% 49%,
+            25% 0%);
+    clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 25% 100%, 14% 49%, 25% 0%);
+}
+
+.retour p {
+    margin-left: 35px;
+    font-size: 16px;
+    color: #000;
+}
+
+.retour a {
+    text-decoration: none;
+}
+
+.galerie {
+    width: 100%;
+    max-width: 1300px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-flow: row wrap;
+}
+
+.galerie img {
+    /* width: 100%; */
+    /* height: 100%; */
+    object-fit: contain;
+    margin: 10px;
+    width: 500px;
+    height: auto;
+}
+
 /* *******************style page mes services******************** */
-.identiteService, .cadeauService, .restaurationPhoto {
+.identiteService,
+.cadeauService,
+.restaurationPhoto {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    margin: 100px auto;
+    margin: 50px auto;
     color: var(--text-color);
 }
+.cadeauService p {
+    color: #87683a;
+    font-weight: bold;
+}
+
 .cadeauService {
     background: #f1f1f1;
+}
+.cadeauService a {
+    text-decoration: none;
     color: #000;
 }
 
@@ -771,22 +906,30 @@ label i {
     width: 400px;
     margin: 30px 60px;
 }
+
 .cadeauService img {
     width: 450px;
     margin: 30px 60px;
 }
+
 .restaurationPhoto img {
     width: 450px;
     margin: 30px 60px;
 }
-.identiteService p, .cadeauService p, .restaurationPhoto p {
+
+.identiteService p,
+.cadeauService p,
+.restaurationPhoto p {
     width: 500px;
     margin: 50px;
     line-height: 3rem;
 }
-.imgCadeau {
-    order: 1;
+
+.photoService {
+    width: 100%;
+    height: 100vh;
 }
+
 /* ********************* connexion espace administrateur ************* */
 
 .formulaires {
@@ -799,28 +942,34 @@ label i {
     margin: 0;
     padding: 0;
 }
+
 .formConnexion {
     width: 50%;
 }
+
 .formConnexion form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+
 .formConnexion h1 {
-    font-family: 'Parisienne', cursive; 
-    color: #87683A;
+    font-family: "Parisienne", cursive;
+    color: #87683a;
 }
+
 .formConnexion a {
-    font-family: 'Parisienne', cursive; 
-    color: #87683A;
+    font-family: "Parisienne", cursive;
+    color: #87683a;
     font-weight: bold;
     text-decoration: none;
     margin-top: 20px;
-} 
-.inputConnexion, .btnConnexionAdmin {
-    border: 1px solid #87683A;
+}
+
+.inputConnexion,
+.btnConnexionAdmin {
+    border: 1px solid #87683a;
     outline: none;
     width: 60%;
     padding: 15px 10px;
@@ -829,16 +978,19 @@ label i {
     border-radius: 8px;
     margin: 5px 50px;
 }
+
 .btnConnexionAdmin:hover {
-    background-color: #87683A;
+    background-color: #87683a;
     color: #f1f1f1;
     cursor: pointer;
     transition: 0.5s ease-in-out;
 }
+
 .imgConnexion {
     width: 50%;
     height: 100vh;
 }
+
 .clipPath {
     background: url(../images/imgConnexionAdmin.jpg) no-repeat center/cover;
     -webkit-clip-path: polygon(16% 0, 100% 0, 100% 100%, 0% 100%);
@@ -846,96 +998,56 @@ label i {
     width: 100%;
     height: 100%;
 }
-/* ********************* page réinitialisation du mot de passe ************** */
-.request, .reset {
-    height: 100vh;
-    width: 100%;
-    background-color: #f1f1f1;
+.messageEnvoye {
+    color: #f1f1f1;
+    background-color: #87683a;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+/* ************************** style pagination ****************** */
+.containerPagination {
+    display: flex;
+    justify-content: center;
+}
+.pagination {
+    list-style: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    position: relative;
-}
-.formRequest, .formReset{
-    margin: 100px auto 0;
-    width: 50%;
     display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    flex-direction: column;
-}
-.formRequest h1, .formRequest small, .formReset {
-    font-family: 'Parisienne', cursive; 
-    color: #87683A;
-    text-align: center;
-}
-.formRequest small {
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
-
-}
-.inputMdp, .btnMdp {
-    border: 1px solid #87683A;
-    outline: none;
-    width: 60%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    margin: 5px 0;
-}
-.btnMdpReset, .inputMdpReset {
-    border: 1px solid #87683A;
-    outline: none;
-    width: 60%;
-    position: relative;
-    padding: 15px 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    margin: 5px 0;
-}
-.btnMdp:hover {
-    background-color: #87683A;
+    column-gap: 2px;
+  }
+.pagination .page-item {
+    margin: 0 1px;
+    padding: 5px;
     color: #f1f1f1;
-    cursor: pointer;
-    transition: 0.5s ease-in-out;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
 }
-/* **************** page envoi mail **************** */
-.containerEmail {
-    width: 100%;
-    height: 100vh;
-    background-color: #f1f1f1;
-    overflow: hidden;
+.pagination .page-link {
+    color: #f1f1f1;
+    text-decoration: none;
 }
-.emailMdp {
-    margin: 100px auto 0;
-    width: 60%;
-    font-family: 'Parisienne', cursive; 
-    color: #87683A;
-    text-align: center;
-} 
-.iconeSvg {
-    stroke-dasharray: 50px;
-    stroke-dashoffset: 50px;
+.nav {
+    margin: 1px 20px;
 }
-
 /* **************** conditions d'utilisations ************** */
 .condition {
     margin: 5px 50px;
 }
+
 .condition p {
-color: #f1f1f1;
-font-size: 14px;
-margin: 5px 20px;
+    color: #f1f1f1;
+    font-size: 14px;
+    margin: 5px 20px;
 }
+
 .condition h3 {
-    color: #87683A;
-    font-family: 'Parisienne', cursive;
+    color: #87683a;
+    font-family: "Parisienne", cursive;
     margin: 0;
-    }
+}
+
 /* ********************** responsive page d'accueil *************** */
 
 @media screen and (max-width: 1335px) {
@@ -945,22 +1057,26 @@ margin: 5px 20px;
         transform: rotate(40deg);
     }
 }
+
 @media screen and (max-width: 1300px) {
     .portfolio {
         height: auto;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 100px 400px 370px 100px 350px 600px;
-        grid-template-areas: 
-            "a b"
-            "a b "
-            "a e"
-            "d e"
-            "d e"
-            "c c";
+        grid-template-columns: 150px 1fr 1fr 150px;
+        grid-template-rows: 200px 300px 200px 300px 200px 600px;
+        grid-template-areas:
+            "z a b y"
+            "z a b y"
+            "z a e y"
+            "z d e y"
+            "z d e y"
+            "z c c y";
     }
-    .portfolio h3 {text-align: center;}
-    .categorie:nth-child(1) {line-height: 1.7em;}
+
+    .portfolio h3 {
+        text-align: center;
+    }
 }
+
 @media screen and (max-width: 1200px) {
     .clique::after {
         bottom: 35px;
@@ -968,52 +1084,139 @@ margin: 5px 20px;
         transform: rotate(40deg);
     }
 }
+@media screen and (max-width: 1119px) {
+    .identiteService p,
+    .cadeauService p,
+    .restaurationPhoto p {
+        width: 80%;
+        margin: 50px;
+        line-height: 1.7rem;
+        text-align: center;
+    }
+    .imageCadeau {
+        order: 1  ;
+    }
+}
+
 @media screen and (max-width: 1019px) {
     .icones a {display: none;}
-    .imgIntro, .clique {margin-right: 150px;}
-    .photo {margin: 10px auto;}
-    .swiper {width: 800px; margin: auto;}
-    .swiper::before {width: 780px;}
+
+    .imgIntro,
+    .clique {
+        margin-right: 150px;
+    }
+
+    .photo {
+        margin: 10px auto;
+    }
+
+    .swiper {
+        width: 800px;
+        margin: auto;
+    }
+
+    .swiper::before {
+        width: 780px;
+    }
+
     .clique::after {
         bottom: 35px;
         left: 150px;
         transform: rotate(40deg);
     }
+    
 }
+@media screen and (max-width: 1000px) {
+    .portfolio {
+        height: auto;
+        grid-template-columns:  1fr 1fr ;
+        grid-template-rows: 200px 300px 200px 300px 200px 600px;
+        grid-template-areas:
+            " a b "
+            " a b "
+            " a e "
+            " d e "
+            " d e "
+            " c c ";
+    }
+
 @media screen and (max-width: 959px) {
-    .services { height: 850px;}
-    .conteneurServices { padding-top: 0;}
-    .formRequest { width: 80%}
+    .services {
+        height: 850px;
+    }
+
+    .conteneurServices {
+        padding-top: 0;
+    }
 }
+
 @media screen and (max-width: 800px) {
+
     /* .icones a {display: none;} */
-    .imgIntro, .clique {margin-right: 150px;}
+    .imgIntro,
+    .clique {
+        margin-right: 150px;
+    }
+
     /* .photo {margin: 10px auto;} */
-    .imgIntro img {height: 110px;}
+    .imgIntro img {
+        height: 110px;
+    }
+
     .clique::after {
         bottom: 35px;
         left: 110px;
         transform: rotate(40deg);
     }
-    .swiper {width: 98%; margin: auto;}
-    .swiper::before {width: 96%;}
-    .containerFooter p {font-size: 16px;}
-    .aPropos{justify-content: center;}
-    .presentation{width: 80%;}
-    .presentation p {margin: 30px 10px 70px 10px;}
-    .patricia::before{left: 50%; transform: translateX(-50%);}
-    .patricia::after{left: 50%; transform: translateX(-50%); text-align: center;}
+
+    .swiper {
+        width: 98%;
+        margin: auto;
+    }
+
+    .swiper::before {
+        width: 96%;
+    }
+
+    .containerFooter p {
+        font-size: 16px;
+    }
+
+    .aPropos {
+        justify-content: center;
+    }
+
+    .presentation {
+        width: 80%;
+    }
+
+    .presentation p {
+        margin: 30px 10px 70px 10px;
+    }
+
+    .patricia::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .patricia::after {
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
     .horaires {
         width: 80%;
         margin: 20px auto;
     }
+
     .formulaires {
         display: block;
         background-color: #fff;
         position: relative;
         overflow: hidden;
-        
     }
+
     .formConnexion {
         position: absolute;
         left: 50%;
@@ -1021,45 +1224,61 @@ margin: 5px 20px;
         transform: translateX(-50%);
         width: 100%;
     }
+
     .imgConnexion {
         visibility: hidden;
     }
 }
+
 @media screen and (max-width: 727px) {
-    .horaires { height: 550px;}
+    .horaires {
+        height: 550px;
+    }
 }
 
-@media screen and (max-width: 691px) {
+@media screen and (max-width: 700px) {
     .portfolio {
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin-top: 50px;
     }
-    .categorie {width: 90%; height: 350px;}
+    .btnMdpReset, .inputMdpReset {
+        width: 90%;
+    }
+    .formRequest, .formReset {
+        width: 90%;
+    }
+
+    .categorie {
+        width: 90%;
+        height: 550px;
+    }
+
     .categorie img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .categorie:nth-child(1), .categorie:nth-child(4) {
-        order: 1;
-        height: 550px;
-        width: 70%
+
+    .swiper {
+        width: 600px;
     }
-    .categorie:nth-child(2) {
-        order: 2;
+
+    .swiper::before {
+        width: 580;
+        margin: auto;
     }
-    .categorie:nth-child(3) {
-        order: 3;
+
+    .horaires {
+        margin-bottom: 0;
     }
-    .mariage, .evenement  {left: 45%; transform: translateX(-50%)}
-    .swiper {width: 600px;}
-    .swiper::before {width: 580; margin: auto;}
-    .horaires {margin-bottom: 0;}
+
     .categorie:nth-child(1) {
-        margin-top: 0;}
+        margin-top: 0;
+    }
 }
+
 @media screen and (max-width: 656px) {
     .clique::after {
         bottom: 40px;
@@ -1067,56 +1286,104 @@ margin: 5px 20px;
         transform: rotate(50deg);
     }
 }
+
 @media screen and (max-width: 639px) {
-    .services {height: 1270px;}
-    .formRequest { width: 95%;}
-    .inputMdp, .btnMdp { width: 90%;}
+    .services {
+        height: 1270px;
+    }
+
+    .formRequest {
+        width: 95%;
+    }
+
+    .inputMdp,
+    .btnMdp {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 577px) {
-    .navbar {flex-direction: column;}
-    .imgIntro {margin: auto;order: 2;}
-    .clique {display: none;}
-    .swiper {max-width: 500px;}
-    .swiper::before {max-width: 480px;}
-    .horaires {width: 95%;margin: 20px auto;}
-   .infos {font-size: 18px;}
+    .navbar {
+        flex-direction: column;
+    }
+
+    .imgIntro {
+        margin: auto;
+        order: 2;
+    }
+
+    .clique {
+        display: none;
+    }
+
+    .swiper {
+        max-width: 500px;
+    }
+
+    .swiper::before {
+        max-width: 480px;
+    }
+
+    .horaires {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .infos {
+        font-size: 18px;
+    }
 }
+
 @media screen and (max-width: 505px) {
-    .portfolio h3 {margin: 0;}
-    .categorie:nth-child(1) {line-height: 1em; height:400px}
-    .categorie:nth-child(4) {line-height: 1em; height:460px}
-    .horaires p {margin: auto 10px;}
+    .portfolio h3 {
+        margin: 0;
+    }
+
+    .categorie {
+        width: 90%;
+        height: 500px;
+    }
+
+    .horaires p {
+        margin: auto 10px;
+    }
+
     #carte {
         width: 90%;
     }
 }
+
 @media screen and (max-width: 467px) {
-    label .iconesMenus {display: none;}
+    label .iconesMenus {display: none; }
 }
+
 @media screen and (max-width: 409px) {
-    .horaires {height: 600px; }
-    }
-    @media screen and (max-width: 375px) {
-        .horaires {height: 650px; }
-        .horaires::after {
-            bottom: 10px;
-        } 
-    }
-/* *************************responsive portfolio ************************ */ 
+    .horaires {height: 600px;}
+}
+
+@media screen and (max-width: 375px) {
+    .horaires {height: 650px;}
+    .horaires::after {bottom: 10px;}
+}
+
+/* *************************responsive portfolio ************************ */
 
 @media screen and (max-width: 550px) {
-    .galerie img {width: 400px;}
+    .galerie img {
+        width: 400px;
+    }
 }
+
 @media screen and (max-width: 416px) {
     .galerie img {width: 350px;}
     .servicePhoto, .serviceCadeau, .serviceRenovation {
         width: 250px;
         height: 300px;
-        margin: 10px ;
+        margin: 10px;
     }
     .photo {
         width: 300px;
         height: 400px;
     }
+}
 }

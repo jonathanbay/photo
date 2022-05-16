@@ -11,9 +11,13 @@
         
             {% for mariage  in photosMariagePortfolio %}
                 <div class="containerImg">
-                    <img src="/uploads/{{ mariage.photo}}" alt="photos_mariage" loading="lazy" >
+                    <img src=" {{ vich_uploader_asset(mariage, 'imageFile') | imagine_filter('portfolio') }}" alt="photo_Animal" >
                 </div>
             {% endfor %}
+        </div>
+        <div class="containerPagination">
+            {% do photosMariagePortfolio.setPageRange(2) %}
+            {{ knp_pagination_render(photosMariagePortfolio, 'pagination/pagination.html.twig') }}
         </div>
     </main>
 {% endblock %}

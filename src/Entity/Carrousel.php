@@ -2,10 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CarrouselRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CarrouselRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: CarrouselRepository::class)]
+#[Vich\Uploadable] 
 class Carrousel
 {
     #[ORM\Id]
@@ -24,6 +27,12 @@ class Carrousel
 
     #[ORM\Column(type: 'string', length: 255)]
     private $photo;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
+
+    #[Vich\UploadableField(mapping: "photo_images", fileNameProperty: 'photo')]
+    private ?File $imageFile = null;
 
     public function getId(): ?int
     {
@@ -76,5 +85,36 @@ class Carrousel
         $this->photo = $photo;
 
         return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+    /**
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $photo = null): void
+    {
+        $this->imageFile = $photo;
+
+        // if ($photo) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+        //     $this->createddAt = new \DateTime('now');
+        // }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 }

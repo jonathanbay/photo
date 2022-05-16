@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use App\Repository\AccueilEvenementRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: AccueilEvenementRepository::class)]
+#[Vich\Uploadable] 
 class AccueilEvenement
 {
     #[ORM\Id]
@@ -28,6 +31,9 @@ class AccueilEvenement
 
     #[ORM\Column(type: 'string', length: 255)]
     private $photo;
+
+    #[Vich\UploadableField(mapping: "photo_images", fileNameProperty: 'photo')]
+    private ?File $imageFile = null;
 
     #[ORM\Column(type: 'boolean')]
     private $isValid;
@@ -95,6 +101,26 @@ class AccueilEvenement
         $this->photo = $photo;
 
         return $this;
+    }
+
+    /**
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $photo = null): void
+    {
+        $this->imageFile = $photo;
+
+        // if ($photo) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+        //     $this->createddAt = new \DateTime('now');
+        // }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 
     public function getIsValid(): ?bool

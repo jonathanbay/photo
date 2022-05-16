@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
 use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -25,6 +26,11 @@ class ContactType extends AbstractType
                     'min' => 2,
                     'max' => 30
                 ]),
+                'constraints' => new Regex([
+                    'pattern' => '/[^a-zA-Z]$/',
+                    'match' => false,
+                        'message' => 'Seules les lettres sont autorisées',
+                    ]),
                 'attr' => [
                     'placeholder' => 'Votre nom et prénom',
                     'class' => 'inputContact'
@@ -35,7 +41,7 @@ class ContactType extends AbstractType
                 'constraints' => new Length([
                     'min' => 2,
                     'max' => 60
-                ]),
+                ]), 
                 'attr' => [
                     'placeholder' => 'Votre email',
                     'class' => 'inputContact'

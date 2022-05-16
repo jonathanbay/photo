@@ -8,6 +8,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class EnfantController extends AbstractController
 {
@@ -19,13 +21,19 @@ class EnfantController extends AbstractController
     }
 
     #[Route('/enfant', name: 'app_enfant')]
-    public function index(): Response
+    public function index(PaginatorInterface $paginator, Request $request): Response
     {
         $enfantPortfolio = $this->entityManager->getRepository(Enfant::class)->findAll();
         $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
+        $photosEnfant = $paginator->paginate(
+            $enfantPortfolio,
+            $request->query->getInt('page', 1),
+            20
+        );
+
         return $this->render('portfolio/enfant.html.twig', [
-            'photosEnfantPortfolio' => $enfantPortfolio,
+            'photosEnfantPortfolio' => $photosEnfant,
             'informations' => $informations,
         ]);
     }

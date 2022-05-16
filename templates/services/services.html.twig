@@ -3,9 +3,15 @@
 {% block title %} Services - Photomaeght {% endblock %}
 
 {% block body %}
+    {# <div class="photoService">
+        <img src="{{ asset('images/photoService.jpg')}}" alt="">
+    </div> #}
+
     <div class="retour">
-            <a href="{{ path('app_accueil') }}"><p>Accueil</p></a>
-        </div>
+        <a href="{{ path('app_accueil') }}"><p>Accueil</p></a>
+    </div>
+
+        
     <div class="identiteService id="identiteService"">
         <p>Besoin de photos d’identité pou renouveler un passeport ou une carte d’identité? photo pour CV ? <br>
         Besoin d’un code pour la photo dématérialisée du permis de conduite? je suis agréé photographe ANTS secteur Saint-Omer <br>
@@ -14,8 +20,9 @@
             <img src="{{ asset('images/identite.png')}}" alt="image titre_sécurisé">
         </div>
     </div>
+
     <div class="cadeauService" id="cadeauService">
-        <div>
+        <div class="imageCadeau">
             <img src="{{ asset('images/carteCadeau.jpg')}}" alt="carte_cadeau" >
         </div>
         <p>Envie de faire plaisir à une personne que l’on aime? Envie de faire un cadeau original ? Envie de vous faire plaisir ? <br> Pensez aux bons cadeaux pour un anniversaire, à l’occasion des fêtes de Noël, d’une naissance, de la Saint Valentin, de la fête des mères, des pères... <br>Si cela vous intéresse, je vous invite à me contacter via l’onglet <a href="index.html#categorieContact">contact</a>  pour plus de renseignements.</p>

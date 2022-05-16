@@ -11,9 +11,13 @@
         
             {% for evenement  in photosEvenementportfolio %}
                 <div class="containerImg">
-                    <img src="/uploads/{{ evenement.photo}}" alt="photos_evenement" loading="lazy" >
+                    <img src=" {{ vich_uploader_asset(evenement, 'imageFile') | imagine_filter('portfolio') }}" alt="photo_evenements" >
                 </div>
             {% endfor %}
+        </div>
+        <div class="containerPagination">
+            {% do photosEvenementportfolio.setPageRange(2) %}
+            {{ knp_pagination_render(photosEvenementportfolio, 'pagination/pagination.html.twig') }}
         </div>
     </main>
 {% endblock %}

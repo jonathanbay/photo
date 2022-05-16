@@ -10,7 +10,7 @@
 			<div class="swiper-wrapper">
 				{% for carrousel in photosCarrousel %}
 					<div class="swiper-slide">
-						<img src="/uploads/{{ carrousel.photo}}" alt="photos_carrousel">
+						<img src=" {{ vich_uploader_asset(carrousel, 'imageFile') | imagine_filter('miniature')}}"  alt="carrousel_photos" >
 					</div>
 				{% endfor %}
 			</div>
@@ -31,22 +31,23 @@
 			<div class="patricia"></div>
 		</div>
 		<div class="photo">
-			<img src="{{ asset('images/photographe.jpg')}}" alt="photographe">
+			<img src="{{ asset('images/photographe.jpg') | imagine_filter('miniature')}}" alt="photographe">
 		</div>
 	</section>
 
 	<section class="portfolio" id="categoriePhotos">
+
 		{% for accueilMariage in photosAccueilMariage %}
 			<div class="categorie mariage">
 				<a href="{{ path('app_mariage')}}">
-					<img src="/uploads/{{ accueilMariage.photo}}" alt="Photo_mariage" loading="lazy"></a>
+					<img src=" {{ vich_uploader_asset(accueilMariage, 'imageFile') | imagine_filter('miniature') }}" alt="photo_Mariage" >
 			</div>
 		{% endfor %}
 
 		{% for accueilFamille in photosAccueilFamille %}
 			<div class="categorie famille">
 				<a href="{{ path('app_famille')}}">
-					<img src="/uploads/{{ accueilFamille.photo}}" alt="photo_famille" loading="lazy">
+					<img src=" {{ vich_uploader_asset(accueilFamille, 'imageFile') | imagine_filter('miniature') }}" alt="photo_Famille" >
 				</a>
 			</div>
 		{% endfor %}
@@ -54,7 +55,7 @@
 		{% for accueilEnfant in photosAccueilEnfant %}
 			<div class="categorie enfant">
 				<a href="{{ path('app_enfant')}}">
-					<img src="/uploads/{{ accueilEnfant.photo}}" alt="photo_enfant" loading="lazy">
+					<img src=" {{ vich_uploader_asset(accueilEnfant, 'imageFile') | imagine_filter('miniature')}}" alt="photo_Enfant" >
 				</a>
 			</div>
 		{% endfor %}
@@ -62,7 +63,7 @@
 		{% for accueilEvenement in photosAccueilEvenement %}
 			<div class="categorie evenement">
 				<a href="{{ path('app_evenement')}}">
-					<img src="/uploads/{{ accueilEvenement.photo}}" alt="photo_evenement" loading="lazy" alt="photo_concert">
+					<img src=" {{ vich_uploader_asset(accueilEvenement, 'imageFile') | imagine_filter('miniature')}}" alt="photo_Evenement" >
 				</a>
 			</div>
 		{% endfor %}
@@ -70,7 +71,7 @@
 		{% for accueilAnimaux in photosAccueilAnimaux %}
 			<div class="categorie animaux">
 				<a href="{{ path('app_animaux')}}">
-					<img src="/uploads/{{ accueilAnimaux.photo}}" alt="photo_Animal" loading="lazy">
+					<img src=" {{ vich_uploader_asset(accueilAnimaux, 'imageFile') | imagine_filter('miniature') }}" alt="photo_Animal" >
 				</a>
 			</div>
 		{% endfor %}

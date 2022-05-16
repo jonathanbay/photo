@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\AccueilAnimaux;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -26,11 +27,8 @@ class AccueilAnimauxCrudController extends AbstractCrudController
             DateTimeField::new('createdAt', 'crée le'),
             AssociationField::new('categorie'),
             BooleanField::new('isvalid', 'valider'),
-            ImageField::new('photo')
-            ->setBasePath('uploads')
-            ->setUploadDir('public/uploads')
-            ->setUploadedFileNamePattern('[randomhash].[extension]')
-            ->setRequired(false),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            ImageField::new('photo')->setBasePath('/uploads/photos')->onlyOnIndex(),
         ];
     }
 }
