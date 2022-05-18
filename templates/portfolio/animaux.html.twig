@@ -7,8 +7,8 @@
         <div class="retour">
             <a href="{{ path('app_accueil') }}#categoriePhotos"><p>Retour catégories portfolio</p></a>
         </div>
+
         <div class="galerie">
-        
             {% for animaux  in photosAnimauxPortfolio %}
                 <div class="containerImg">
                     <img src=" {{ vich_uploader_asset(animaux, 'imageFile') | imagine_filter('portfolio') }}" alt="photo_animaux" >

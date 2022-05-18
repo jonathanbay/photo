@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photomaeght, photographe professionnelle situer dans l'audomarois réalisant des prestations en tout genre, mariage, événements, famille et animaux que ce soit en extérieur ou en studio ">
     <title>{% block title %} Photosmaeght - Capturer vos moments d'émotions {% endblock %}</title>
-    <link rel="shortcut icon" href="images/iconNavigateur.jpg">
+    <link rel="shortcut icon" href="images/icones/navigateur.png">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
@@ -33,7 +34,8 @@
                 <a href="{{ path('app_accueil')}}#categorieContact"><i class="fa-solid fa-envelope-circle-check"></i></a>
             </div>
             <div class="imgIntro">
-                <img src="{{ asset('images/logoPhotomaeght.png') | imagine_filter('logo')}}" alt="logo">
+                <a href="{{ path('app_accueil') }}"><img src="{{ asset('images/logoPhotomaeght.png') | imagine_filter('logo')}}" alt="logo"></a>
+                
             </div>
             <div class="clique"> <p>Cliquez pour explorer </p></div>
             

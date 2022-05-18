@@ -601,6 +601,7 @@ label i {
 .cart img {
     height: 80px;
     width: 80px;
+    object-fit: cover;
     margin: 10px auto 50px auto;
 }
 
@@ -788,17 +789,21 @@ textarea {
 }
 
 /* ****************personnalisation message envoie réussi ************** */
-/* .messageEnvoye {
+.messageEnvoye {
     background-color: #87683a;
     color: #f1f1f1;
     text-align: center;
     font-size: 14px;
     border-radius: 8px;
     margin: 10px;
-    padding: 5px; */
+    padding: 5px; 
     /* width: 100%; */
-/* } */
-
+} 
+.required {
+    margin: 10px 20px;
+    color: #f1f1f1;
+    font-family: "Parisienne", cursive;
+}
 /* *********************** footer *************** */
 .containerFooter {
     display: flex;
@@ -809,11 +814,9 @@ textarea {
     /* background-color: rgba(244, 232, 212, 1); */
     background-color: var(--bg-color);
 }
-
 .containerFooter a {
     text-decoration: none;
 }
-
 .containerFooter p {
     margin: auto 20px;
     font-size: 18px;
