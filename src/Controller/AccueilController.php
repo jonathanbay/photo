@@ -48,7 +48,7 @@ class AccueilController extends AbstractController
             $contact = $form->getData();
             
             $this->entityManager->persist($contact);
-            // $this->entityManager->flush();
+            $this->entityManager->flush();
 
             // envoi de la demande de formulaire par mail
 

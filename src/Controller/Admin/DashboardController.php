@@ -10,6 +10,7 @@ use App\Entity\AccueilMariage;
 use App\Entity\Animaux;
 use App\Entity\Carrousel;
 use App\Entity\Categorie;
+use App\Entity\Contact;
 use App\Entity\Enfant;
 use App\Entity\Evenement;
 use App\Entity\Famille;
@@ -66,5 +67,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('services');
 
         yield MenuItem::linkToCrud('Information', 'fas fa-info', Informations::class);
+
+        yield MenuItem::section('RGPD');
+            yield MenuItem::linkToCrud('Données utilisateurs', 'fas fa-lock', Contact::class);
     }
 }
