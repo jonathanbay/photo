@@ -28,8 +28,6 @@ class Carrousel
     #[ORM\Column(type: 'string', length: 255)]
     private $photo;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $file;
 
     #[Vich\UploadableField(mapping: "photo_images", fileNameProperty: 'photo')]
     private ?File $imageFile = null;
@@ -83,18 +81,6 @@ class Carrousel
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
-
-        return $this;
-    }
-
-    public function getFile(): ?string
-    {
-        return $this->file;
-    }
-
-    public function setFile(string $file): self
-    {
-        $this->file = $file;
 
         return $this;
     }
