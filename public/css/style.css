@@ -799,10 +799,19 @@ textarea {
     padding: 5px; 
     /* width: 100%; */
 } 
-.required {
-    margin: 10px 20px;
+.conditionCgv {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    margin: 0 7px;
+}
+.lienCvg p {
     color: #f1f1f1;
     font-family: "Parisienne", cursive;
+    padding-left: 10px;
+}
+.lienCvg {
+    text-decoration: none;
 }
 /* *********************** footer *************** */
 .containerFooter {
@@ -1035,17 +1044,18 @@ textarea {
     margin: 1px 20px;
 }
 /* **************** conditions d'utilisations ************** */
-.condition {
+.conditionUtilisation {
     margin: 5px 50px;
 }
 
-.condition p {
+.conditionUtilisation p {
     color: #f1f1f1;
     font-size: 14px;
     margin: 5px 20px;
+    font-size: 22px;
 }
 
-.condition h3 {
+.conditionUtilisation h3 {
     color: #87683a;
     font-family: "Parisienne", cursive;
     margin: 0;

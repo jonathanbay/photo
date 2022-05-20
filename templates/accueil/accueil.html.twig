@@ -195,9 +195,39 @@
 					{{ message }}
 				</div>
 			{% endfor %}
-			<div class="form">
+
+			{# <div class="form">
 				{{ form(form) }}
-			</div>
+			</div>  #}
+
+			{{ form_start(form) }}
+
+				<div class="form">
+					{{ form_widget(form.nomPrenom) }}
+			    </div> 
+				<div class="form">
+					{{ form_widget(form.email) }}
+			    </div> 
+				<div class="form">
+					{{ form_widget(form.telephone) }}
+			    </div> 
+				<div class="form">
+					{{ form_widget(form.message) }}
+			    </div> 
+				
+				<div class="form conditionCgv">
+					{{ form_widget(form.cvg) }}
+					<a class="lienCvg" href="{{path('app_condition_utilisation') }}"> <p>J'ai lu et j'accepte les conditions d'utilisations</p></a> 
+			    </div> 
+				<div class="form">
+					{{ form_widget(form.submit) }}
+			    </div> 
+				<div class="form">
+					{{ form_widget(form.captcha) }}
+			    </div> 
+
+				
+			{{ form_end(form) }}
 		</div>
 	</section>
 

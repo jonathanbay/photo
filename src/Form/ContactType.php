@@ -69,7 +69,8 @@ class ContactType extends AbstractType
             ->add('cvg', CheckboxType::class, [
                 'mapped' =>false,
                 'required' => true,
-                'label'    => "J'ai lu et j'accepte les conditions d'utilisations ",
+                // 'label'    => "J'ai lu et j'accepte les conditions d'utilisations ",
+                
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Envoyer',
