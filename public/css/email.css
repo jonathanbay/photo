@@ -7,9 +7,7 @@ boby {
 /* ********************* page réinitialisation du mot de passe ************** */
 .request,
 .reset {
-    /* height: 100vh; */
     width: 100%;
-    /* background-color: #f1f1f1; */
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -67,10 +65,11 @@ boby {
     margin: 5px 0;
 }
 
-.btnMdp:hover {
+.btnMdp:hover, .btnMdp:focus {
     background-color: #87683a;
     color: #f1f1f1;
     cursor: pointer;
+    -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
 }
 

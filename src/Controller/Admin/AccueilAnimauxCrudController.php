@@ -24,11 +24,11 @@ class AccueilAnimauxCrudController extends AbstractCrudController
         return [
             TextField::new('nom'),
             TextareaField::new('description'),
-            DateTimeField::new('createdAt', 'crée le'),
             AssociationField::new('categorie'),
-            BooleanField::new('isvalid', 'valider'),
             TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             ImageField::new('photo')->setBasePath('/uploads/photos')->onlyOnIndex(),
+            BooleanField::new('isvalid', 'valider'),
+            DateTimeField::new('createdAt', 'crée le'),
         ];
     }
 }

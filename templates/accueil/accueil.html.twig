@@ -6,48 +6,49 @@
 {% block body %}
 
 	<section class="carrousel">
-		<div class="swiper mySwiper">
+		<div class="swiper mySwiper"> 
 			<div class="swiper-wrapper">
 				{% for carrousel in photosCarrousel %}
 					<div class="swiper-slide">
-						<img src=" {{ vich_uploader_asset(carrousel, 'imageFile') | imagine_filter('miniature')}}"  alt="carrousel_photos" >
+						<img src=" {{ vich_uploader_asset(carrousel, 'imageFile') | imagine_filter('miniature')}}"  alt="défilement d'images de mariage, concert, enfant, bébé et animaux" >
 					</div>
 				{% endfor %}
 			</div>
 		</div>
-
 		<div class="textIntro">
 			<p>
-				<i class="fa-solid fa-quote-left"></i>De manière inconsciente, je croise, je guette un regard, une expression, des traits ou une nostalgie capable de résumer ou plus exactement de révéler une vie<i class="fa-solid fa-quote-right"></i>
+				<i class="fa-solid fa-quote-left"></i>Une photo est un arrêt sur le temps qui fuit<i class="fa-solid fa-quote-right"></i>
 			</p>
-			<h3 class="signature">Steve McCurry</h3>
+			<h3 class="signature">Patricia & José</h3>
 		</div>
-	</section>
+	</section> 
 
 	<section class="aPropos" id="bibliographie">
 		<div class="presentation">
 			<h1>À propos</h1>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus quae sunt quos porro impedit. Natus dolorem atque at cum culpa impedit, dignissimos enim, reiciendis ipsum consequuntur nesciunt, asperiores eligendi! Corporis reprehenderit enim neque porro excepturi eos nobis. Est possimus voluptas architecto molestias eos iure animi consectetur quis numquam. Magni soluta expedita sit nostrum, enim unde rerum rem amet commodi totam! Ex dolores perferendis voluptatem inventore saepe possimus consequatur necessitatibus deleniti aspernatur .</p>
-			<div class="patricia"></div>
+			<p >Je suis artisan photographe, diplomée avec 18 années d'expériences en développement et retouche photo argentique et numérique. Je suis perfectionniste et je marie le sens de l'harmonie et la beauté.</p>
+			<span class="patricia">Patricia</span>
+			<p>Autodidacte, je suis passionné par la prise de vue, le sens du détail et de la mise en scène. De nature créatif je suis capable  de capturer et saisir les moments uniques et précieux.</p>
+			<span class="jose">José</span>
 		</div>
 		<div class="photo">
-			<img src="{{ asset('images/photographe.jpg') | imagine_filter('miniature')}}" alt="photographe">
+			<img src="{{ asset('images/photographe.jpg') | imagine_filter('miniature')}}" alt="portrait de la photographe">
 		</div>
 	</section>
 
 	<section class="portfolio" id="categoriePhotos">
-
 		{% for accueilMariage in photosAccueilMariage %}
 			<div class="categorie mariage">
-				<a href="{{ path('app_mariage')}}">
-					<img src=" {{ vich_uploader_asset(accueilMariage, 'imageFile') | imagine_filter('miniature') }}" alt="photo_Mariage" >
+				<a href="{{ path('app_mariage') }}">
+					<img src=" {{ vich_uploader_asset(accueilMariage, 'imageFile') | imagine_filter('miniature') }}" alt="photos de mariages" >
+				</a>
 			</div>
 		{% endfor %}
 
 		{% for accueilFamille in photosAccueilFamille %}
 			<div class="categorie famille">
 				<a href="{{ path('app_famille')}}">
-					<img src=" {{ vich_uploader_asset(accueilFamille, 'imageFile') | imagine_filter('miniature') }}" alt="photo_Famille" >
+					<img src=" {{ vich_uploader_asset(accueilFamille, 'imageFile') | imagine_filter('miniature') }}" alt="photos représentant des familles" >
 				</a>
 			</div>
 		{% endfor %}
@@ -55,7 +56,7 @@
 		{% for accueilEnfant in photosAccueilEnfant %}
 			<div class="categorie enfant">
 				<a href="{{ path('app_enfant')}}">
-					<img src=" {{ vich_uploader_asset(accueilEnfant, 'imageFile') | imagine_filter('miniature')}}" alt="photo_Enfant" >
+					<img src=" {{ vich_uploader_asset(accueilEnfant, 'imageFile') | imagine_filter('miniature')}}" alt="photos representant des enfants" >
 				</a>
 			</div>
 		{% endfor %}
@@ -63,7 +64,7 @@
 		{% for accueilEvenement in photosAccueilEvenement %}
 			<div class="categorie evenement">
 				<a href="{{ path('app_evenement')}}">
-					<img src=" {{ vich_uploader_asset(accueilEvenement, 'imageFile') | imagine_filter('miniature')}}" alt="photo_Evenement" >
+					<img src=" {{ vich_uploader_asset(accueilEvenement, 'imageFile') | imagine_filter('miniature')}}" alt="photos représentant des évenements de concerts, spectacles, animations en tous genres" >
 				</a>
 			</div>
 		{% endfor %}
@@ -71,75 +72,30 @@
 		{% for accueilAnimaux in photosAccueilAnimaux %}
 			<div class="categorie animaux">
 				<a href="{{ path('app_animaux')}}">
-					<img src=" {{ vich_uploader_asset(accueilAnimaux, 'imageFile') | imagine_filter('miniature') }}" alt="photo_Animal" >
+					<img src=" {{ vich_uploader_asset(accueilAnimaux, 'imageFile') | imagine_filter('miniature') }}" alt="photos repésentant un ou des animaux" >
 				</a>
 			</div>
 		{% endfor %}
-
 	</section>
 
-	<div class="parallaxe"></div>
-
-	{# <section class="services" id="categorieServives">
-		        <div class="identite cart aos-item"
-		            data-aos="zoom-out-left"
-		            data-aos-duration="1500">
-		                <div class="servicePhoto">
-		                    <a href="{{ path('app_services')}}#identiteService"> <img src="{{ asset('images/photoIdentite.jpg') }}" alt="photo_identité"> </a>
-		                    <div>
-		                        <p>Photos conformes pour vos documents officiels, nous sommes agrée "agence national des titres sécurisés"...</p>
-		                    </div>
-		                    <div class="btnServices">
-		                        <a href="{{ path('app_services')}}#identiteService"><button>En savoir plus →</button>  </a>
-		                    </div>
-		                </div>
-		        </div>
-		        <div class="cadeau cart aos-item"
-		            data-aos="zoom-out"
-		            data-aos-duration="1500">
-		                <div class="serviceCadeau">
-		                    <a href="{{ path('app_services')}}#cadeauService"> <img src=" {{ asset('images/photoCadeau.jpg')}}" alt="photo_famille"> </a>
-		                    <div>
-		                        <p>Offrez un cadeau qui reste!!! Réaliser une photo c'est mettre son quotidien en pause...</p>
-		                    </div>
-		                    <div class="btnServices">
-		                        <a href="{{ path('app_services')}}#cadeauService"><button>En savoir plus →</button>  </a>
-		                    </div>
-		                </div>
-		        </div>
-		        <div class="restauration cart aos-item"
-		            data-aos="zoom-out-right"
-		            data-aos-duration="1500">
-		                <div class="serviceRenovation">
-		                    <a href="{{ path('app_services')}}#restaurationPhoto"> <img src="{{ asset('images/photoAncienne.jpg')}}" alt="photo_ancienne"> </a>
-		                    <div>
-		                        <p>Restauration de photos anciennes, redonnez vie à vos souvenirs d'antan...</p>
-		                    </div>
-		                    <div class="btnServices">
-		                        <a href="{{ path('app_services')}}#restaurationPhoto"><button>En savoir plus →</button>  </a>
-		                    </div>
-		                </div>
-		        </div>
-		    </section> #}
-
-	<section class="services">
+	<section class="services" id="categorieServives">
 		<div class="conteneurServices">
 			<div class="cart aos-item" data-aos="zoom-out-right" data-aos-duration="1500">
 				<img src="{{ asset('images/icones/woman.png') | imagine_filter('logo') }}" alt="logo">
 				<p>Photos conformes pour vos documents officiels, nous sommes agrée "agence national des titres sécurisés"...</p>
-				<a class="btnServices" href="{{ path('app_services')}}">En savoir plus</a>
+				<a class="btnServices" href="{{ path('app_services_identite')}}">En savoir plus</a>
 			</div>
-
-			<div class="cart aos-item" data-aos="zoom-out" data-aos-duration="1500">
+			<div class="cart aos-item" 
+				data-aos="zoom-out" 
+				data-aos-duration="1500">
 				<img src="{{ asset('images/icones/cadeau.png') | imagine_filter('logo') }}" alt="cadeau">
 				<p>Offrez un cadeau qui reste!!! Réaliser une photo c'est mettre son quotidien en pause...</p>
-				<a class="btnServices" href="{{ path('app_services')}}">En savoir plus</a>
+				<a class="btnServices" href="{{ path('app_services_cadeau')}}">En savoir plus</a>
 			</div>
-
 			<div class="cart aos-item" data-aos="zoom-out-left" data-aos-duration="1500">
 				<img src=" {{ asset('images/icones/anciennePhoto.png') | imagine_filter('logo') }}" alt="photo">
-				<p>Restauration de photos anciennes, redonnez vie à vos souvenirs d'antan...</p>
-				<a class="btnServices" href="{{ path('app_services')}}">En savoir plus</a>
+				<p>Nous effectuons des travaux photos en tous genre rénovation, développement, numérisation ...</p>
+				<a class="btnServices" href="{{ path('app_travaux_photos')}}">En savoir plus</a>
 			</div>
 		</div>
 	</section>
@@ -196,14 +152,10 @@
 				</div>
 			{% endfor %}
 
-			{# <div class="form">
-				{{ form(form) }}
-			</div>  #}
-
 			{{ form_start(form) }}
 
 				<div class="form">
-					{{ form_widget(form.nomPrenom) }}
+					{{ form_row(form.nomPrenom) }}
 			    </div> 
 				<div class="form">
 					{{ form_widget(form.email) }}
@@ -216,8 +168,8 @@
 			    </div> 
 				
 				<div class="form conditionCgv">
-					{{ form_widget(form.cvg) }}
-					<a class="lienCvg" href="{{path('app_condition_utilisation') }}"> <p>J'ai lu et j'accepte les conditions d'utilisations</p></a> 
+					{{ form_row(form.cvg) }}
+					<a class="lienCvg" href="{{path('app_condition_utilisation') }}"> <p>J'ai lu et j'accepte les mentions légales</p></a> 
 			    </div> 
 				<div class="form">
 					{{ form_widget(form.submit) }}
@@ -225,7 +177,6 @@
 				<div class="form">
 					{{ form_widget(form.captcha) }}
 			    </div> 
-
 				
 			{{ form_end(form) }}
 		</div>

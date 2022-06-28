@@ -4,28 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Photomaeght, photographe professionnelle situer dans l'audomarois réalisant des prestations en tout genre, mariage, événements, famille et animaux que ce soit en extérieur ou en studio ">
-    <title>{% block title %} Photosmaeght - Capturer vos moments d'émotions {% endblock %}</title>
+    <title>{% block title %} Photographe Mariages, grossesses et photos administratives - Saint-Omer {% endblock %}</title>
+    <meta name="description" content="Photomaeght, photographe professionnelle situé aux alentours de Saint-Omer réalise des prestations en tout genre, mariages, événements, grossesses et animaux que ce soit en extérieur ou en studio, Mais aussi les photos administratives, photos d'identités, passeport, photos permis de conduire accrédité ANTS. ">
     <link rel="shortcut icon" href="images/icones/navigateur.png">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
 </head>
-<body>
+<body> 
     <header> 
-        <label>
-            <input type="checkbox">
-            <span class="menu"> <span class="hamburger"></span> </span>
-            <ul>
-                <li><a href=" {{ path('app_accueil') }}"><i class="fa-solid fa-house iconesMenus"></i>Accueil</a></li>
-                <li><a href="{{ path('app_accueil')}}#bibliographie"><i class="fa-solid fa-person iconesMenus"></i>À propos</a> </li>
-                <li><a href="{{ path('app_accueil')}}#categoriePhotos"><i class="fa-solid fa-camera-retro iconesMenus"></i>Portfolio</a> 
-                <li><a href="{{ path('app_accueil')}}#categorieServives"><i class="fa-solid fa-photo-film iconesMenus"></i>Services</a></li>
-                <li><a href="{{ path('app_accueil')}}#categorieContact"><i class="fa-solid fa-envelope iconesMenus"></i>Contact</a></li>
-                </li>
-            </ul>
-        </label>
+        <nav>
+            <div id="nav" class="containerMenu">
+
+                <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+
+                <div class="menu-content">
+                    <a onclick="closeNav()" href=" {{ path('app_accueil') }}"><i class="fa-solid fa-house iconesMenus"></i>Accueil</a>
+                    <a onclick="closeNav()" href="{{ path('app_accueil')}}#bibliographie"><i class="fa-solid fa-person iconesMenus"></i>À propos</a>
+                    <a onclick="closeNav()" href="{{ path('app_accueil')}}#categoriePhotos"><i class="fa-solid fa-camera-retro iconesMenus"></i>Portfolio</a>
+                    <a onclick="closeNav()" href="{{ path('app_accueil')}}#categorieServives"><i class="fa-solid fa-photo-film iconesMenus"></i>Services</a>
+                    <a onclick="closeNav()" href="{{ path('app_accueil')}}#categorieContact"><i class="fa-solid fa-envelope iconesMenus"></i>Contact</a>
+                </div>
+            </div>
+
+            <span class="menu" onclick="openNav()" id="open"> <span class="hamburger"></span> </span>
+        </nav>
+
         <div class="navbar">
             <div class="icones">
                 {% for informations in informations %}
@@ -37,7 +42,7 @@
                 <a href="{{ path('app_accueil') }}"><img src="{{ asset('images/logoPhotomaeght.png') | imagine_filter('logo')}}" alt="logo"></a>
                 
             </div>
-            <div class="clique"> <p>Cliquez pour explorer </p></div>
+            <div class="clique"> <p >Cliquez pour explorer </p></div>
             
         </div>
         <div class="traitIntro"></div>
@@ -51,13 +56,13 @@
     <footer>
         <div class="containerFooter">
             <p>©2022 Photomaeght</p>
-            <a href="{{ path('app_condition_utilisation')}}"><p>Conditions d'utilisations</p></a>
-            <a href="{{ path('app_login') }}"> <i class="fa-solid fa-house-lock"></i> </a>
+            <a href="{{ path('app_condition_utilisation')}}"><p>Mentions légales</p></a>
+            <a href="{{ path('app_login') }}"> <i class="fa-solid fa-house-lock"></i>  </a>
             <a href="https://www.facebook.com/commerce59470/"> <img src=" {{ asset('images/icones/locauxmotiv1.png') | imagine_filter('logo')}}" alt="logo"> </a>
         </div>
     </footer>   
     
-
+<a href=""></a>
 
     
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>

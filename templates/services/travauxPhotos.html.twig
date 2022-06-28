@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Services - Photomaeght {% endblock %}
+
+{% block body %}
+
+    <div class="retour">
+        <a href="{{ path('app_accueil')}}"><p>Accueil</p></a>
+    </div>
+
+    <h1 class="titreRenovPhoto">Rénovation de photos anciennes</h1>
+    
+    <div class="travauxPhotos" id="travauxPhotos">
+        <div>
+            <img src="{{ asset('images/restauration.jpg') }}" alt="photo_ancienne"> 
+        </div>
+        <p>Vous avez d'anciennes photos présentant des tâches, rayures, plis, déchirures ou tout autre type d'altération ? Le temps qui passe finira par les détrire définitivement, alors n'hesitez pas à me contacter pour redonner vie à vos souvenirs d'antan.</p>
+    </div> 
+
+    <h1 class="titreRenovPhoto">Developpements</h1>
+    
+    <div class="travauxPhotos">
+        <p class="pellicule">Photomaeght réalise le développement de pellicule tout format(argentique), ainsi que le developpement de diapositifs. Contactez moi pour de plus amples renseignements! </p>
+        <div>
+            <img src="{{ asset('images/pellicule.jpg') }}" alt="pellicule photo"> 
+        </div>
+    </div> 
+
+    <h1 class="titreRenovPhoto">Numérisation</h1>
+    <div class="travauxPhotos">
+        <div>
+            <img  src="{{ asset('images/cassette.jpg') }}" alt="pellicule photo"> 
+        </div>
+        <p>Fini les installations fastidieuses pour le visionnage de vos anciennes cassettes VHS et films super 8. Photomaeght vous les numérise afin que vous puissiez profiter de vos souvenirs passés. Je suis à votre disposition pour toutes informations complémentaires.</p>
+        
+    </div> 
+
+{% endblock %}

@@ -1,9 +1,9 @@
 AOS.init();
 
 // ********** animation du carrousel *************
-var swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".mySwiper", {
     autoplay: {
-      delay: 2000,
+      delay: 2500,
     },
     slidesPerView: 1,
     spaceBetween: 30,
@@ -18,7 +18,7 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-// ***************** animation leafleat ***********
+// ***************** mise en place de la carte avec leafleat ***********
 const bollezeele = [50.8666061, 2.3255062]
 
 // création de la map
@@ -35,8 +35,21 @@ const marker = L.marker(bollezeele).addTo(map);
 // ajout d'un popup
 marker.bindPopup('<h3>Studio Photomaeght</h3> <br> 7 Rue de l\'ancienne gare');
 
-// ******************** animation formulaire galerie privée ******************
+// ******************** menu ******************
 
-const btnOverlayInscription = document.getElementById('btnOverlayInscription');
-const signInButton = document.getElementById('signIn');
+function openNav() {
+  document.getElementById("nav").style.transform = "translateX(0%)";
+  document.getElementById("nav").style.transform = "translateX(0%)";
+  document.getElementById("open").style.display = "none";
+}
+
+function closeNav() {
+  document.getElementById("nav").style.transform = "translateX(-100%)";
+  document.getElementById("open").style.display = "block";
+}
+
+
+
+
+
 

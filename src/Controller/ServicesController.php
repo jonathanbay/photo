@@ -17,12 +17,12 @@ class ServicesController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/services', name: 'app_services')]
+    #[Route('/services/identite', name: 'app_services_identite')]
     public function index(): Response
     {
         $informations = $this->entityManager->getRepository(Informations::class)->findAll();
 
-        return $this->render('services/services.html.twig', [
+        return $this->render('services/identite.html.twig', [
             'informations' => $informations,
         ]);
     }

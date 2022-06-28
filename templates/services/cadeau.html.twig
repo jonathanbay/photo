@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Services - Photomaeght {% endblock %}
+
+{% block body %}
+
+    <div class="retour">
+        <a href="{{ path('app_accueil') }}"><p>Accueil</p></a>
+    </div>
+
+    <h1 class="titreCadeauPhoto">Offrez une carte cadeau !</h1>
+
+    <div class="cadeauService" id="cadeauService">
+        
+        <p>Envie de faire plaisir à une personne que l’on aime? Envie de faire un cadeau original ? Envie de vous faire plaisir ? <br> Pensez aux bons cadeaux pour un anniversaire, à l’occasion des fêtes de Noël, d’une naissance, de la Saint Valentin, de la fête des mères, des pères... <br>Si cela vous intéresse, je vous invite à me contacter via l’onglet <a href="{{ path('app_accueil')}}#categorieContact">contact</a>  pour plus de renseignements.</p>
+        <div class="imageCadeau">
+            <img src="{{ asset('images/carteCadeau.jpg') }}" alt="carte_cadeau" >
+        </div>
+    </div>
+    
+{% endblock %}

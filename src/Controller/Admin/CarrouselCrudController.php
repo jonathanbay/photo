@@ -16,7 +16,6 @@ class CarrouselCrudController extends AbstractCrudController
     {
         return Carrousel::class;
     }
-
     
     public function configureFields(string $pageName): iterable
     {

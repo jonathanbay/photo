@@ -8,11 +8,13 @@ use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 
@@ -23,15 +25,6 @@ class ContactType extends AbstractType
         $builder
             ->add('nomPrenom', TextType::class, [
                 'label' => false,
-                'constraints' => new Length([
-                    'min' => 2,
-                    'max' => 30
-                ]),
-                'constraints' => new Regex([
-                    'pattern' => '/[^a-zA-Z]$/',
-                    'match' => false,
-                        'message' => 'Seules les lettres sont autorisées',
-                    ]),
                 'attr' => [
                     'placeholder' => 'Votre nom et prénom',
                     'class' => 'inputContact'
@@ -39,10 +32,6 @@ class ContactType extends AbstractType
             ])
             ->add('email', EmailType::class, [
                 'label' => false,
-                'constraints' => new Length([
-                    'min' => 2,
-                    'max' => 60
-                ]), 
                 'attr' => [
                     'placeholder' => 'Votre email',
                     'class' => 'inputContact'
@@ -50,10 +39,6 @@ class ContactType extends AbstractType
             ])
             ->add('telephone', TextType::class, [
                 'label' => false,
-                'constraints' => new Length([
-                    'min' => 2,
-                    'max' => 20
-                ]),
                 'attr' => [
                     'placeholder' => 'Votre téléphone',
                     'class' => 'inputContact'
@@ -67,9 +52,14 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('cvg', CheckboxType::class, [
+                'label' => false,
                 'mapped' =>false,
                 'required' => true,
-                // 'label'    => "J'ai lu et j'accepte les conditions d'utilisations ",
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez valider les mentions légales',
+                    ]),
+                ],
                 
             ])
             ->add('submit', SubmitType::class, [

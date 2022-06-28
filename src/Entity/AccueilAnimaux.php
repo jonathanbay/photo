@@ -6,6 +6,7 @@ use App\Repository\AccueilAnimauxRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 #[ORM\Entity(repositoryClass: AccueilAnimauxRepository::class)]
 #[Vich\Uploadable] 
@@ -96,7 +97,7 @@ class AccueilAnimaux
         return $this->photo;
     }
 
-    public function setPhoto(string $photo): self
+    public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
 
@@ -107,7 +108,7 @@ class AccueilAnimaux
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
      */
-    public function setImageFile(?File $photo = null): void
+    public function setImageFile(?File $photo): void
     {
         $this->imageFile = $photo;
 
@@ -119,7 +120,7 @@ class AccueilAnimaux
     }
 
     public function getImageFile(): ?File
-    {
+    {  
         return $this->imageFile;
     }
 

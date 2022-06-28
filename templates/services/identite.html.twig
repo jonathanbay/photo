@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Services - Photomaeght {% endblock %}
+
+{% block body %}
+
+    <div class="retour">
+        <a href="{{ path('app_accueil') }}"><p>Accueil</p></a>
+    </div>
+
+    <h1 class="titreIdentitePhoto">Photos pour vos documents officiels</h1>
+
+    <div class="identiteService id="identiteService"">
+        <p>Besoin de photos d’identité pou renouveler un passeport ou une carte d’identité? photo pour CV ? <br>
+        Besoin d’un code pour la photo dématérialisée du permis de conduite? je suis agréé photographe ANTS secteur Saint-Omer <br>
+        Prise de vue rapide ! <br><a href="{{ path('app_accueil')}}#categorieContact">Contactez moi</a>  pour plus de renseignements.<br> Paiement par carte bancaire accepté. </p>
+        <div>
+            <img src="{{ asset('images/identite.png') }}" alt="image titre_sécurisé">
+        </div>
+    </div>
+    
+{% endblock %}

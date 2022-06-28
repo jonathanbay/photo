@@ -78,7 +78,7 @@ class Carrousel
         return $this->photo;
     }
 
-    public function setPhoto(string $photo): self
+    public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
 
@@ -92,11 +92,11 @@ class Carrousel
     {
         $this->imageFile = $photo;
 
-        // if ($photo) {
+        if ($photo) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-        //     $this->createddAt = new \DateTime('now');
-        // }
+            $this->createddAt = new \DateTime('now');
+        }
     }
 
     public function getImageFile(): ?File

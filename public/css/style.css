@@ -24,7 +24,6 @@ body {
     color: #000;
     font-size: 1.2em;
     line-height: 1.6;
-    /* background-color: var(--text-color); */
     background-color: var(--bg-color);
     overflow-x: hidden;
     font-family: "Roboto", sans-serif;
@@ -32,34 +31,25 @@ body {
     padding: 0;
 }
 
-label {
-    height: 500px;
-}
 
-label .menu {
+
+/* ******************  essai 2 *************** */
+.menu {
     position: absolute;
-    /* right: -100px;
-  top: -100px; */
-    right: 0px;
-    top: 0px;
+    top: 20px;
+    right: 25px;
     z-index: 100;
-    /* width: 200px;
-  height: 200px; */
     width: 90px;
     height: 90px;
     background: #fff;
-    /* border-radius: 50% 50% 50% 50%; */
-    border-radius: 50% 0 50% 50%;
+    border-radius: 50% ;
     -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
     box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
     cursor: pointer;
 }
-
-label .hamburger {
+.hamburger {
     position: absolute;
-    /* top: 135px;
-  left: 50px; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -67,90 +57,69 @@ label .hamburger {
     height: 2px;
     background: rgb(48, 47, 47);
     display: block;
-    -webkit-transform-origin: center;
-    transform-origin: center;
     -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
 }
-
-label .hamburger:after,
-label .hamburger:before {
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+.hamburger:after,
+.hamburger:before {
     content: "";
     position: absolute;
     display: block;
-    width: 100%;
+    width: 30px;
     height: 100%;
     background: rgb(48, 47, 47);
 }
-
-label .hamburger:before {
+.hamburger:before {
     top: -10px;
 }
-
-label .hamburger:after {
+.hamburger:after {
     bottom: -10px;
 }
 
-label input {
-    display: none;
-}
-
-label input:checked+.menu {
-    box-shadow: 0 0 0 100vw #fff, 0 0 0 100vh #fff;
-    border-radius: 0;
-}
-
-label input:checked+.menu .hamburger {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-label input:checked+.menu .hamburger:after {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    bottom: 0;
-}
-
-label input:checked+.menu .hamburger:before {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
+.containerMenu {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 10;
+    left: 0;
     top: 0;
+    background-color: rgba(0,0,0,0.95);
+    overflow-x: hidden;
+    transition: 0.7s;
+    overflow-y: hidden;
 }
-
-label input:checked+.menu+ul {
-    opacity: 1;
+.menu-content {
+    position: relative;
+    top: 30%;
+    width: 100%;
+    text-align: center;
 }
-
-label ul {
-    z-index: 200;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    -webkit-transition: 0.25s 0s ease-in-out;
-    transition: 0.25s 0s ease-in-out;
-}
-
-label a {
-    margin-bottom: 1em;
-    display: block;
-    color: #000;
+.containerMenu a {
+    padding: 8px;
     text-decoration: none;
+    font-size: 36px;
+    color: #b4b1b1;
+    display: block;
+    transition: 0.3s;
+}
+.containerMenu a:hover, .containerMenu a:focus {
+    color: #f1f1f1;
 }
 
-label li {
-    list-style-type: none;
+.containerMenu .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
 }
-
-label i {
-    color: rgb(48, 47, 47);
+.menu-content i {
+    color: #b4b1b1;
     font-size: 25px;
     margin: 0 20px;
-}
+} 
 
 /* ************** navbar ************** */
 .navbar {
@@ -204,7 +173,7 @@ label i {
 .swiper {
     width: 450px;
     height: 520px;
-    margin: 50px 100px;
+    margin: 50px 5px;
     padding: 20px;
     position: relative;
 }
@@ -231,8 +200,7 @@ label i {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* border: thick double #87683A */
-    border: 4px solid #87683a;
+    border: thick double #87683A;
 }
 
 /* **************** style intro ************** */
@@ -297,21 +265,9 @@ label i {
         " y e a d v "
         " y e a d v "
         " y e w d v ";
-
-    /* grid-template-columns: 1fr repeat(6, 200px) 1fr ;
-    grid-template-rows:  repeat(6, 150px);
-    grid-template-areas:
-        
-        "v a a z d d t u"
-        "v a a z d d t u"
-        "v a a c c y y u"
-        "v x x c c e e u"
-        "v b b b w e e u"
-        "v b b b w e e u";  */
-
 }
 .portfolio::after {
-    content: "portfolio";
+    content: "Portfolio";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -458,50 +414,30 @@ label i {
 
 .presentation p {
     text-align: left;
-    font-size: 18px;
-    margin: 70px 80px;
-    /* color: var(--text-color); */
+    font-size: 20px;
+    margin: 20px auto;
     color: #000;
+    width: 80%;
 }
-
-.patricia {
-    position: relative;
+.presentation .patricia, .presentation .jose {
+    font-style: italic;
+    font-weight: bold;
+    background: #87683a;
+    text-align: center;
+    font-size: 25px;
+    margin-left: 70%;
+    padding: 10px 50px;
 }
-
 .presentation h1 {
     text-align: center;
     color: #000;
+    font-family: "Parisienne", cursive;
+    font-size: 45px;
 }
-
 .photo {
     margin: 50px auto;
     width: 400px;
     height: 500px;
-}
-
-.patricia::before {
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 60px;
-    top: -40px;
-    right: -130px;
-    background-color: #87683a;
-    z-index: 2;
-}
-
-.patricia::after {
-    content: "Patricia Maeght";
-    position: absolute;
-    width: 350px;
-    height: 60px;
-    top: -30px;
-    right: -220px;
-    color: #000;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 25px;
-    z-index: 2;
 }
 
 .photo img {
@@ -509,63 +445,7 @@ label i {
     height: 100%;
     object-fit: cover;
 }
-
-/* **************** parallaxe ************** */
-.parallaxe {
-    /* background: url(../images/parallaxe.jpg) no-repeat fixed 50% 60%; */
-    background-image: url(../images/parallaxe.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50% 60%;
-    background-size: cover;
-    height: 500px;
-    width: 100%;
-}
-
-/* ********************service *************** */
-/* .services {
-    height: 650px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
-}
-.identite, .restauration, .cadeau  {
-    display: flex;
-    justify-content: center;
-    width: 420px;
-    background-color: #232323a8;
-    margin: 10px;
-}
-.servicePhoto, .serviceCadeau, .serviceRenovation {
-    width: 300px;
-    height: 350px;
-    margin: 10px ;
-    color: var(--text-color);
-}
-.servicePhoto img, .serviceCadeau img, .serviceRenovation img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-}
-.btnServices button {
-    text-align: center;
-    border: 3px solid #87683A;
-    background-color:  var(--bg-color);
-    color: var(--text-color);
-    width: 180px;
-    padding: 16px;
-    font-size: 17px;
-    font-weight: 600;
-}
-.btnServices {
-    display: flex;
-    justify-content: center;
-}
-.btnServices button:hover {
-    background-color: #87683A;
-    color: #000;
-} */
+/* ******************* page d'accueil mes services ********** */
 
 .services {
     height: 600px;
@@ -623,10 +503,11 @@ label i {
     font-size: 18px;
 }
 
-.btnServices:hover {
-    background-color: #3b3b3b;
+.btnServices:hover, .btnServices:focus {
+    background-color: #87683a;
     color: #f1f1f1;
     border: none;
+    -webkit-transition: 0.7s ease-in-out;
     transition: 0.7s ease-in-out;
 }
 
@@ -715,7 +596,6 @@ label i {
     width: 75%;
     height: 350px;
     margin: 5px auto;
-    /* box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.637); */
     box-shadow: -10px 15px 25px 0 rgba(0, 0, 0, 0.637);
     border-radius: 5px;
 }
@@ -781,10 +661,11 @@ textarea {
     margin-bottom: 10px;
 }
 
-.btnForm:hover {
+.btnForm:hover, .btnServices:focus {
     background-color: #87683a;
     color: var(--text-color);
     cursor: pointer;
+    -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
 }
 
@@ -797,7 +678,7 @@ textarea {
     border-radius: 8px;
     margin: 10px;
     padding: 5px; 
-    /* width: 100%; */
+    width: 90%;
 } 
 .conditionCgv {
     margin: 5px 0;
@@ -810,9 +691,24 @@ textarea {
     font-family: "Parisienne", cursive;
     padding-left: 10px;
 }
+.lienCvg p:hover {
+    text-decoration: underline;
+    font-size: 22px;
+}
 .lienCvg {
     text-decoration: none;
 }
+#contact_cvg {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+}
+/* ***************** messages d'erreurs fotm de contact **************** */
+
+.conditionCgv li, .form li  {
+    color: #f1f1f1;
+}
+
 /* *********************** footer *************** */
 .containerFooter {
     display: flex;
@@ -893,7 +789,7 @@ textarea {
 /* *******************style page mes services******************** */
 .identiteService,
 .cadeauService,
-.restaurationPhoto {
+.travauxPhotos {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -901,17 +797,8 @@ textarea {
     margin: 50px auto;
     color: var(--text-color);
 }
-.cadeauService p {
-    color: #87683a;
-    font-weight: bold;
-}
-
-.cadeauService {
-    background: #f1f1f1;
-}
-.cadeauService a {
-    text-decoration: none;
-    color: #000;
+.cadeauService a, .identiteService a {
+    color: #f1f1f1;
 }
 
 .identiteService img {
@@ -919,29 +806,26 @@ textarea {
     margin: 30px 60px;
 }
 
-.cadeauService img {
-    width: 450px;
-    margin: 30px 60px;
-}
 
-.restaurationPhoto img {
+.cadeauService img, .travauxPhotos img {
     width: 450px;
     margin: 30px 60px;
 }
 
 .identiteService p,
 .cadeauService p,
-.restaurationPhoto p {
+.travauxPhotos p {
     width: 500px;
     margin: 50px;
     line-height: 3rem;
 }
-
-.photoService {
-    width: 100%;
-    height: 100vh;
+.titreRenovPhoto, .titreIdentitePhoto, .titreCadeauPhoto {
+    text-align: center;
+    color: #f1f1f1;
+    text-decoration: underline;
+    font-family: "Parisienne", cursive;
+    margin: 0 10px;
 }
-
 /* ********************* connexion espace administrateur ************* */
 
 .formulaires {
@@ -991,10 +875,11 @@ textarea {
     margin: 5px 50px;
 }
 
-.btnConnexionAdmin:hover {
+.btnConnexionAdmin:hover, .btnConnexionAdmin:focus {
     background-color: #87683a;
     color: #f1f1f1;
     cursor: pointer;
+    -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
 }
 
@@ -1009,13 +894,6 @@ textarea {
     clip-path: polygon(16% 0, 100% 0, 100% 100%, 0% 100%);
     width: 100%;
     height: 100%;
-}
-.messageEnvoye {
-    color: #f1f1f1;
-    background-color: #87683a;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
 }
 /* ************************** style pagination ****************** */
 .containerPagination {
@@ -1052,22 +930,26 @@ textarea {
     color: #f1f1f1;
     font-size: 14px;
     margin: 5px 20px;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .conditionUtilisation h3 {
     color: #87683a;
-    font-family: "Parisienne", cursive;
-    margin: 0;
+    text-transform: uppercase;
 }
 
 /* ********************** responsive page d'accueil *************** */
+@media screen and (max-width: 1480px) {
+    .clique::after {
+        bottom: 20px;
+        left: 150px;
+        transform: rotate(50deg);
+    }
+}
 
 @media screen and (max-width: 1335px) {
     .clique::after {
-        bottom: 35px;
-        left: 160px;
-        transform: rotate(40deg);
+        left: 130px;
     }
 }
 
@@ -1092,15 +974,20 @@ textarea {
 
 @media screen and (max-width: 1200px) {
     .clique::after {
-        bottom: 35px;
-        left: 130px;
-        transform: rotate(40deg);
+        /* bottom: 35px; */
+        left: 90px;
+        /* transform: rotate(46deg); */
+    }
+}
+@media screen and (max-width: 1169px) {
+    .pellicule {
+        order: 1;
     }
 }
 @media screen and (max-width: 1119px) {
     .identiteService p,
     .cadeauService p,
-    .restaurationPhoto p {
+    .travauxPhotos p {
         width: 80%;
         margin: 50px;
         line-height: 1.7rem;
@@ -1116,26 +1003,17 @@ textarea {
 
     .imgIntro,
     .clique {
-        margin-right: 150px;
+        margin-right: 140px;
     }
 
     .photo {
         margin: 10px auto;
     }
 
-    .swiper {
-        width: 800px;
-        margin: auto;
-    }
-
-    .swiper::before {
-        width: 780px;
-    }
-
     .clique::after {
-        bottom: 35px;
-        left: 150px;
-        transform: rotate(40deg);
+        bottom: 30px;
+        left: 120px;
+        transform: rotate(45deg);
     }
     
 }
@@ -1154,13 +1032,9 @@ textarea {
     }
 
 @media screen and (max-width: 959px) {
-    .services {
-        height: 850px;
-    }
-
-    .conteneurServices {
-        padding-top: 0;
-    }
+    .services {height: 850px;}
+    .conteneurServices {padding-top: 0;}
+    .presentation .patricia, .presentation .jose {margin-left: 50%;}
 }
 
 @media screen and (max-width: 800px) {
@@ -1177,18 +1051,9 @@ textarea {
     }
 
     .clique::after {
-        bottom: 35px;
-        left: 110px;
-        transform: rotate(40deg);
-    }
-
-    .swiper {
-        width: 98%;
-        margin: auto;
-    }
-
-    .swiper::before {
-        width: 96%;
+        /* bottom: 35px; */
+        left: 100px;
+        transform: rotate(50deg);
     }
 
     .containerFooter p {
@@ -1202,11 +1067,10 @@ textarea {
     .presentation {
         width: 80%;
     }
-
-    .presentation p {
-        margin: 30px 10px 70px 10px;
+    .photo img {
+        margin-top: 50px;
+        padding-bottom: 50px;
     }
-
     .patricia::before {
         left: 50%;
         transform: translateX(-50%);
@@ -1274,14 +1138,14 @@ textarea {
         object-fit: cover;
     }
 
-    .swiper {
-        width: 600px;
-    }
+    /* .swiper {
+        width: 90%;
+    }  */
 
     .swiper::before {
         width: 580;
         margin: auto;
-    }
+    } 
 
     .horaires {
         margin-bottom: 0;
@@ -1293,11 +1157,10 @@ textarea {
 }
 
 @media screen and (max-width: 656px) {
-    .clique::after {
-        bottom: 40px;
-        left: 80px;
-        transform: rotate(50deg);
-    }
+    .clique {display: none; order:1}
+    .icones {order:1}
+    .imgIntro {order:0; padding-right: 80px;}
+   
 }
 
 @media screen and (max-width: 639px) {
@@ -1312,6 +1175,9 @@ textarea {
     .inputMdp,
     .btnMdp {
         width: 90%;
+    }
+    .cadeauService img, .identiteService img, .travauxPhotos img {
+        width: 70%;
     }
 }
 
@@ -1329,13 +1195,13 @@ textarea {
         display: none;
     }
 
-    .swiper {
+    /* .swiper {
         max-width: 500px;
-    }
+    } */
 
-    .swiper::before {
+    /* .swiper::before {
         max-width: 480px;
-    }
+    } */
 
     .horaires {
         width: 95%;
@@ -1376,7 +1242,9 @@ textarea {
 
 @media screen and (max-width: 375px) {
     .horaires {height: 650px;}
-    .horaires::after {bottom: 10px;}
+    .horaires::after {bottom: 0px;}
+    .presentation .patricia, .presentation .jose {margin-left: 30%;}
+    .categorie {height: 400px}
 }
 
 /* *************************responsive portfolio ************************ */
@@ -1400,3 +1268,4 @@ textarea {
     }
 }
 }
+
